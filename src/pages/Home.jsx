@@ -1,5 +1,4 @@
 import Hero from '../components/Hero'
-import MissionVision from '../components/MissionVision'
 import About from '../components/About'
 import Products from '../components/Products'
 import Manufacturing from '../components/Manufacturing'
@@ -16,7 +15,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <MissionVision />
       <About />
       <Products />
       <Manufacturing />

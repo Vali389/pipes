@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import AboutSection from '../components/About'
+import MissionVision from '../components/MissionVision'
 import Manufacturing from '../components/Manufacturing'
 import QualityControl from '../components/QualityControl'
 import WhyUs from '../components/WhyUs'
@@ -26,6 +27,7 @@ export default function About() {
         </div>
       </section>
 
+      <MissionVision />
       <AboutSection />
       <Manufacturing />
       <QualityControl />
