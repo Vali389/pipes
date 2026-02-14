@@ -159,35 +159,6 @@ export default function Facilities() {
           </motion.div>
         </div>
 
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mt-16 bg-gradient-to-r from-[#F8F9FA] to-white rounded-2xl p-8 border-2 border-gray-200"
-        >
-          <div className="grid md:grid-cols-3 gap-6 text-center">
-            {[
-              { number: '50,000+', label: 'Sq. Ft. Storage', icon: '📐' },
-              { number: '24/7', label: 'Security Monitoring', icon: '🔐' },
-              { number: '100+', label: 'Containers Capacity', icon: '🚢' },
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-4"
-              >
-                <div className="text-3xl mb-2">{stat.icon}</div>
-                <div className="text-[#F57C00] text-[28px] font-extrabold font-opensans mb-1">{stat.number}</div>
-                <div className="text-[#333333] text-sm font-inter font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   )

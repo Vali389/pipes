@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import logoImage from '../assets/WhatsApp Image 2026-02-04 at 9.12.44 PM.jpeg'
+import logoImage from '../assets/WhatsApp Image 2026-02-14 at 12.10.12 AM.jpeg'
 
 const footerLinks = {
   quickLinks: [
@@ -14,7 +14,6 @@ const footerLinks = {
     { name: 'uPVC Pipes', href: '/products' },
     { name: 'Drainage Pipes', href: '/products' },
     { name: 'High Pressure Pipes', href: '/products' },
-    { name: 'Borewell Casing Pipes', href: '/products' },
     { name: 'Electric Conduit Pipes', href: '/products' },
   ],
 }

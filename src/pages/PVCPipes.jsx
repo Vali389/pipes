@@ -48,12 +48,12 @@ export default function PVCPipes() {
     return (
         <div className="bg-white font-inter text-gray-800">
 
-            {/* --- HERO SECTION: With Beached Coral Gradient --- */}
+            {/* --- HERO SECTION: With Background Image --- */}
             <div className="relative h-[70vh] bg-gradient-to-br from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] flex items-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img src={heroBackground} className="w-full h-full object-cover" alt="PVC Piping Infrastructure" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-0"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30 z-0"></div>
                 <div className="container mx-auto px-6 lg:px-12 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -64,7 +64,7 @@ export default function PVCPipes() {
                         <h1 className="text-[48px] md:text-[64px] lg:text-[72px] font-extrabold text-white font-opensans leading-tight mb-8 drop-shadow-xl">
                             UPVC, PVC & SWR Pipe Systems
                         </h1>
-                        <p className="text-[20px] md:text-[24px] text-white leading-relaxed max-w-2xl font-medium drop-shadow-lg mb-10">
+                        <p className="text-[20px] md:text-[24px] text-white leading-relaxed max-w-2xl font-medium drop-shadow-lg mb-10" style={{ opacity: 1, color: '#ffffff' }}>
                             Comprehensive piping solutions for agriculture, plumbing, and infrastructure. Engineered for durability, safety, and long-term efficiency.
                         </p>
                         <div className="flex gap-4">

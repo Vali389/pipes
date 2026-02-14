@@ -17,7 +17,7 @@ export default function Blog() {
             <h1 className="font-opensans text-[42px] lg:text-[56px] font-extrabold mb-6">
               Our Blog
             </h1>
-            <p className="font-inter text-[20px] text-white/90  mx-auto">
+            <p className="font-inter text-[20px] text-white mx-auto">
               Insights and Updates on PVC & HDPE Pipes
             </p>
           </motion.div>

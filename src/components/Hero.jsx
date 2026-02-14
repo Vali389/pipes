@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation, Pagination, EffectFade } from 'swiper/modules'
@@ -16,40 +17,57 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-fade'
 
-const slides = [
+// Google Drive file IDs for hero carousel
+const googleDriveSlides = [
   {
-    image: pipeHero1,
-    badge: "Global Piping Solutions",
+    fileId: '1LMxonci69L9lJwy6hKq1fUFh_VvQV4h_',
+    badge: "Premium Quality",
     title: "Premium Quality PVC & HDPE Pipes",
-    desc: "Trusted global supplier of high-quality piping solutions for industrial and commercial applications worldwide."
+    desc: "Trusted global supplier of high-quality piping solutions for industrial and commercial applications worldwide. Our pipes are engineered for durability, performance, and long-term reliability in diverse infrastructure projects."
   },
   {
-    image: heroBg,
+    fileId: '19Aj14qKCbkVMYQAB5I1IsJKZdS48vKV6',
     badge: "Industry Leaders",
     title: "Structural Integrity and Strength",
-    desc: "Our high-performance piping products are designed to withstand the most demanding industrial environments."
+    desc: "Our high-performance piping products are designed to withstand the most demanding industrial environments. With superior material quality and precision engineering, we deliver solutions that exceed industry standards."
   },
   {
-    image: pipeHero2,
+    fileId: '15A0ZOgqLdbQHBmdMNJZcedtr8M9Di98s',
     badge: "Industrial Excellence",
     title: "Advanced Manufacturing Standards",
-    desc: "Implementing state-of-the-art technology to ensure durability and precision in every pipe we produce."
+    desc: "Implementing state-of-the-art technology to ensure durability and precision in every pipe we produce. Our manufacturing processes are ISO certified and continuously optimized for excellence."
   },
   {
-    image: productBg,
+    fileId: '191CVWNbN5-39Nxt55sqDBq5_iQ2gVApn',
     badge: "Versatile Solutions",
     title: "Comprehensive Range of Fittings",
-    desc: "Find the perfect match for your infrastructure needs with our wide selection of PVC and HDPE components."
+    desc: "Find the perfect match for your infrastructure needs with our wide selection of PVC and HDPE components. From standard fittings to custom solutions, we have everything for your project."
   },
   {
-    image: pipeHero3,
+    fileId: '1RQ9WGPLngfpCQCR7Ty-2rnk4WjrWqIg-',
     badge: "Reliable Distribution",
     title: "Fast & Secure Global Logistics",
-    desc: "Delivering piping excellence to over 25+ countries with a focus on safety and on-time project completion."
+    desc: "Delivering piping excellence to over 25+ countries with a focus on safety and on-time project completion. Our global network ensures reliable delivery wherever you are."
+  },
+  {
+    fileId: '1FMmmUCcXgPksuGuyUMMgnQvqmuH-cIsP',
+    badge: "Global Piping Solutions",
+    title: "Export Quality Pipes",
+    desc: "Premium PVC and HDPE pipes manufactured to international standards, ready for export to global markets with complete quality assurance and documentation."
   }
 ]
 
+// Using Google Drive images for hero carousel - high resolution
+const slides = googleDriveSlides.map(slide => ({
+  ...slide,
+  image: `https://drive.google.com/uc?export=download&id=${slide.fileId}`
+}))
+
 export default function Hero() {
+  const prevRef = useRef(null)
+  const nextRef = useRef(null)
+  const [swiper, setSwiper] = useState(null)
+
   return (
     <section className="relative h-[90vh] overflow-hidden bg-black group">
       <Swiper
@@ -59,8 +77,9 @@ export default function Hero() {
         loop={true}
         speed={1200}
         autoplay={{
-          delay: 5000,
+          delay: 4000,
           disableOnInteraction: false,
+          pauseOnMouseEnter: false,
         }}
         pagination={{
           clickable: true,
@@ -72,8 +91,20 @@ export default function Hero() {
           },
         }}
         navigation={{
-          prevEl: '.hero-prev',
-          nextEl: '.hero-next',
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+        onSwiper={(swiper) => {
+          setSwiper(swiper)
+          // Update navigation after swiper is initialized
+          setTimeout(() => {
+            if (swiper && prevRef.current && nextRef.current) {
+              swiper.params.navigation.prevEl = prevRef.current
+              swiper.params.navigation.nextEl = nextRef.current
+              swiper.navigation.init()
+              swiper.navigation.update()
+            }
+          }, 100)
         }}
         className="w-full h-full"
       >
@@ -85,6 +116,12 @@ export default function Hero() {
                 src={slide.image}
                 alt={slide.title}
                 className="w-full h-full object-cover"
+                loading="eager"
+                style={{ imageRendering: 'high-quality' }}
+                onError={(e) => {
+                  // Fallback to alternative high-res URL if first fails
+                  e.target.src = `https://drive.google.com/thumbnail?id=${slide.fileId}&sz=w3840-h2160`
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
             </div>
@@ -122,7 +159,7 @@ export default function Hero() {
                 </h1>
 
                 {/* Subheading */}
-                <p className="font-inter text-xl lg:text-2xl text-white mb-12 leading-relaxed max-w-2xl font-medium drop-shadow-lg">
+                <p className="font-inter text-lg sm:text-xl lg:text-2xl text-white mb-12 leading-relaxed max-w-2xl font-medium drop-shadow-lg" style={{ opacity: 1, color: '#ffffff' }}>
                   {slide.desc}
                 </p>
 
@@ -171,10 +208,20 @@ export default function Hero() {
         ))}
 
         {/* Custom Navigation Buttons */}
-        <button className="hero-prev absolute left-4 top-1/2 -translate-y-1/2 z-30 w-14 h-14 rounded-2xl bg-white hover:bg-gray-100 text-[#40E0D0] transition-all cursor-pointer flex items-center justify-center shadow-2xl border border-gray-200 group/btn active:scale-95">
+        <button 
+          ref={prevRef}
+          onClick={() => swiper?.slidePrev()}
+          className="hero-prev absolute left-4 top-1/2 -translate-y-1/2 z-30 w-14 h-14 rounded-2xl bg-white/90 hover:bg-white text-[#40E0D0] transition-all cursor-pointer flex items-center justify-center shadow-2xl border border-gray-200 group/btn active:scale-95 backdrop-blur-sm"
+          aria-label="Previous slide"
+        >
           <FaCaretLeft className="w-8 h-8 group-hover/btn:-translate-x-1 transition-transform" />
         </button>
-        <button className="hero-next absolute right-4 top-1/2 -translate-y-1/2 z-30 w-14 h-14 rounded-2xl bg-white hover:bg-gray-100 text-[#40E0D0] transition-all cursor-pointer flex items-center justify-center shadow-2xl border border-gray-200 group/btn active:scale-95">
+        <button 
+          ref={nextRef}
+          onClick={() => swiper?.slideNext()}
+          className="hero-next absolute right-4 top-1/2 -translate-y-1/2 z-30 w-14 h-14 rounded-2xl bg-white/90 hover:bg-white text-[#40E0D0] transition-all cursor-pointer flex items-center justify-center shadow-2xl border border-gray-200 group/btn active:scale-95 backdrop-blur-sm"
+          aria-label="Next slide"
+        >
           <FaCaretRight className="w-8 h-8 group-hover/btn:translate-x-1 transition-transform" />
         </button>
 

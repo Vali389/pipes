@@ -32,8 +32,8 @@ export default function CTA() {
                 </div>
                 <div>
                   <p className="text-white/60 text-[13px]">Call Us</p>
-                  <a href="tel:+919876543210" className="text-white font-semibold text-[16px] hover:text-[#F7941E] transition-colors">
-                    +91 98765 43210
+                  <a href="https://wa.me/918125700615" target="_blank" rel="noopener noreferrer" className="text-white font-semibold text-[16px] hover:text-[#F7941E] transition-colors">
+                    +91 81257 00615
                   </a>
                 </div>
               </div>
@@ -46,8 +46,8 @@ export default function CTA() {
                 </div>
                 <div>
                   <p className="text-white/60 text-[13px]">Email Us</p>
-                  <a href="mailto:info@pipesindustries.com" className="text-white font-semibold text-[16px] hover:text-[#F7941E] transition-colors">
-                    info@pipesindustries.com
+                  <a href="mailto:info@bwpipes.com" className="text-white font-semibold text-[16px] hover:text-[#F7941E] transition-colors">
+                    info@bwpipes.com
                   </a>
                 </div>
               </div>

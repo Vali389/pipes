@@ -31,9 +31,7 @@ const packagingFeatures = [
 const exportTerms = [
   { term: 'FOB', desc: 'Free On Board' },
   { term: 'CIF', desc: 'Cost, Insurance & Freight' },
-  { term: 'CFR', desc: 'Cost & Freight' },
   { term: 'EXW', desc: 'Ex Works' },
-  { term: 'DDP', desc: 'Delivered Duty Paid' },
 ]
 
 export default function Packaging() {
@@ -52,7 +50,7 @@ export default function Packaging() {
             Export &amp; Logistics
           </h2>
           <div className="w-24 h-1 bg-[#40E0D0] mx-auto mb-6"></div>
-          <p className="font-inter text-[20px] text-[#333333] max-w-3xl mx-auto">
+          <p className="font-inter text-[20px] text-[#333333] ">
             We manage the complete export process &mdash; from export packing and palletization to documentation and delivery &mdash;
             ensuring seamless shipments for bulk and project orders.
           </p>
@@ -156,7 +154,7 @@ export default function Packaging() {
           <p className="font-inter text-[16px] text-white/90 text-center mb-8">
             We support multiple Incoterms depending on buyer requirements and can coordinate port-to-port or door delivery.
           </p>
-          <div className="grid md:grid-cols-5 gap-4">
+          <div className="grid md:grid-cols-3 gap-4">
             {exportTerms.map((item, index) => (
               <motion.div
                 key={item.term}

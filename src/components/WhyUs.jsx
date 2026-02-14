@@ -11,18 +11,6 @@ export default function WhyUs() {
       description: 'Export-focused sourcing and logistics optimization help deliver value without compromising specifications.',
     },
     {
-      title: 'Standards-compliant products',
-      description: 'Pipes supplied as per IS, ASTM, BS, DIN or project-specific requirements with complete test reports.',
-    },
-    {
-      title: 'Reliable logistics support',
-      description: 'End-to-end coordination for export packing, container stuffing, documentation and dispatch from port.',
-    },
-    {
-      title: 'Strong after-sales coordination',
-      description: 'Dedicated team to support shipment tracking, documentation queries and repeat project requirements.',
-    },
-    {
       title: 'Supplying with trust & consistency',
       description: 'Focused on long-term relationships with contractors, distributors and project owners worldwide.',
     },

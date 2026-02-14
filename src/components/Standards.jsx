@@ -7,14 +7,6 @@ export default function Standards() {
       description: 'International Organization for Standardization certifications ensuring global quality compliance.',
     },
     { 
-      name: 'ASTM Standards',
-      description: 'American Society for Testing and Materials standards for material specifications and testing.',
-    },
-    { 
-      name: 'IS / BS Standards',
-      description: 'Indian Standards and British Standards for regional compliance and quality assurance.',
-    },
-    { 
       name: 'Customer-specific Technical Specifications',
       description: 'Customized standards and specifications tailored to meet specific project requirements.',
     },
@@ -34,11 +26,11 @@ export default function Standards() {
             Standards & Compliance
           </h2>
           <p className="font-inter text-[25px] text-[#333333] leading-[1.9] mx-auto mb-12">
-            Products can be supplied as per various international standards including ISO, ASTM, IS/BS, and customer-specific technical specifications. Compliance documents and test reports can be arranged upon request to ensure full transparency and quality assurance.
+            Products can be supplied as per various international standards including ISO and customer-specific technical specifications. Compliance documents and test reports can be arranged upon request to ensure full transparency and quality assurance.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {standards.map((standard, index) => (
             <motion.div
               key={standard.name}

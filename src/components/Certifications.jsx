@@ -73,7 +73,7 @@ export default function Certifications() {
             Quality &amp; Certifications
           </h2>
           <div className="w-24 h-1 bg-[#40E0D0] mx-auto mb-6"></div>
-          <p className="font-inter text-[20px] text-[#333333] max-w-4xl mx-auto leading-relaxed">
+          <p className="font-inter text-[20px] text-[#333333]  leading-relaxed">
             All products are sourced from ISO-certified manufacturing units and tested to meet international quality standards.
             Third-party inspection and detailed test certificates can be arranged on request for project documentation.
           </p>

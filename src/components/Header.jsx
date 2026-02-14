@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import logoImage from '../assets/WhatsApp Image 2026-02-04 at 9.12.44 PM.jpeg'
+import logoImage from '../assets/WhatsApp Image 2026-02-14 at 12.10.12 AM.jpeg'
 
 const navItems = [
   { name: 'Home', href: '/', hasDropdown: false },
@@ -34,7 +34,7 @@ export default function Header() {
             <img
               src={logoImage}
               alt="SRUX Logo"
-              className="h-20 w-[300px] mr-auto "
+              className="h-20 w-[250px]"
             />
           </Link>
 
@@ -57,8 +57,8 @@ export default function Header() {
 
           {/* Phone & Contact */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:+919876543210" className="text-[15px] font-semibold text-[#1a1a1a] font-opensans hover:text-[#40E0D0] transition-colors">
-              +91 98765 43210
+            <a href="https://wa.me/918125700615" target="_blank" rel="noopener noreferrer" className="text-[15px] font-semibold text-[#1a1a1a] font-opensans hover:text-[#40E0D0] transition-colors">
+              +91 81257 00615
             </a>
             <motion.a
               href="#contact"
@@ -111,8 +111,8 @@ export default function Header() {
                 </Link>
               ))}
               <div className="px-4 pt-4 border-t mt-4">
-                <a href="tel:+919876543210" className="block text-[15px] font-semibold text-[#1a1a1a] font-opensans mb-3">
-                  +91 98765 43210
+                <a href="https://wa.me/918125700615" target="_blank" rel="noopener noreferrer" className="block text-[15px] font-semibold text-[#1a1a1a] font-opensans mb-3">
+                  +91 81257 00615
                 </a>
                 <Link
                   to="/contact"

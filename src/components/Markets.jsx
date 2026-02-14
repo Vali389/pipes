@@ -5,7 +5,6 @@ export default function Markets() {
     { 
       region: 'Africa', 
       countries: ['Kenya', 'Tanzania', 'Uganda', 'Nigeria', 'Ghana', 'South Africa'],
-      projects: '200+',
       icon: '🌍',
       gradient: 'from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0]',
       description: 'Serving multiple African nations with reliable pipe solutions for infrastructure development.',
@@ -13,26 +12,9 @@ export default function Markets() {
     { 
       region: 'Middle East', 
       countries: ['UAE', 'Saudi Arabia', 'Qatar', 'Kuwait', 'Oman'],
-      projects: '350+',
       icon: '🏜️',
       gradient: 'from-[#7FFFD4] via-[#40E0D0] to-[#7FFFD4]',
       description: 'Supporting Middle Eastern construction and infrastructure projects with quality pipes.',
-    },
-    { 
-      region: 'South Asia', 
-      countries: ['Bangladesh', 'Sri Lanka', 'Nepal', 'Myanmar'],
-      projects: '180+',
-      icon: '🌏',
-      gradient: 'from-[#40E0D0] via-[#1a4d6e] to-[#40E0D0]',
-      description: 'Providing piping solutions for South Asian markets with competitive pricing.',
-    },
-    { 
-      region: 'Emerging Markets', 
-      countries: ['Southeast Asia', 'Latin America', 'Eastern Europe'],
-      projects: '150+',
-      icon: '🚀',
-      gradient: 'from-[#7FFFD4] via-[#40E0D0] to-[#7FFFD4]',
-      description: 'Expanding reach to emerging markets with growing infrastructure needs.',
     },
   ]
 
@@ -98,14 +80,6 @@ export default function Markets() {
                         <h3 className="font-opensans text-[32px] font-extrabold text-white mb-2">
                           {market.region}
                         </h3>
-                        <div className="flex items-center gap-2">
-                          <svg className="w-4 h-4 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          <span className="font-inter text-[15px] text-white/90 font-medium">
-                            {market.projects} Projects Completed
-                          </span>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -166,59 +140,6 @@ export default function Markets() {
           ))}
         </div>
 
-        {/* Professional Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative"
-        >
-          <div className="bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] rounded-3xl p-12 shadow-2xl relative overflow-hidden">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute inset-0" style={{
-                backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-                backgroundSize: '30px 30px',
-              }}></div>
-            </div>
-
-            <div className="relative z-10">
-              <div className="text-center mb-10">
-                <h3 className="font-opensans text-[32px] font-extrabold text-white mb-3">
-                  Our Global Reach
-                </h3>
-                <div className="w-24 h-1 bg-[#F57C00] mx-auto"></div>
-              </div>
-
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {[
-                  { number: '25+', label: 'Countries', icon: '🌎', color: 'from-[#F57C00] to-[#E66D00]' },
-                  { number: '50+', label: 'Cities', icon: '🏙️', color: 'from-[#7FFFD4] to-[#40E0D0]' },
-                  { number: '1000+', label: 'Projects', icon: '📦', color: 'from-[#F57C00] to-[#E66D00]' },
-                  { number: '10+', label: 'Years Experience', icon: '⭐', color: 'from-[#7FFFD4] to-[#40E0D0]' },
-                ].map((stat, index) => (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center border-2 border-white/20 hover:border-white/40 hover:bg-white/15 transition-all"
-                    whileHover={{ scale: 1.05, y: -4 }}
-                    style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
-                  >
-                    <div className={`w-16 h-16 bg-gradient-to-br ${stat.color} rounded-xl flex items-center justify-center mx-auto mb-4 text-3xl shadow-lg`}>
-                      {stat.icon}
-                    </div>
-                    <div className="text-white text-[40px] font-extrabold font-opensans mb-2">{stat.number}</div>
-                    <div className="text-white/90 text-sm font-inter font-medium uppercase tracking-wide">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )
