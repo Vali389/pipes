@@ -12,11 +12,11 @@
 */
 
 @theme {
-  /* Fonts - Strux uses Open Sans + Inter */
+  /* Fonts - BWPipes uses Open Sans + Inter */
   --font-opensans: 'Open Sans', sans-serif;
   --font-inter: 'Inter', sans-serif;
 
-  /* Strux Brand Colors */
+  /* BWPipes Brand Colors */
   --color-background: #FFFFFF;
   --color-header-footer: #40E0D0;
   /* Bleached Coral (Turquoise) */
@@ -102,7 +102,7 @@ p {
   /* Darker for better contrast */
 }
 
-/* Section Label - Strux: 18px, 700 weight, uppercase, steel blue */
+/* Section Label - BWPipes: 18px, 700 weight, uppercase, steel blue */
 .section-label {
   font-family: var(--font-opensans);
   font-size: 18px;

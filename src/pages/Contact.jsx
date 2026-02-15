@@ -3,9 +3,9 @@ import { motion } from 'framer-motion'
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaPaperPlane } from 'react-icons/fa'
 
 const countryCodes = [
-  { code: '+1', country: 'US/CA', flag: '🇺🇸' },
+  { code: '+1', country: 'United States/Canada', flag: '🇺🇸' },
   { code: '+91', country: 'India', flag: '🇮🇳' },
-  { code: '+44', country: 'UK', flag: '🇬🇧' },
+  { code: '+44', country: 'United Kingdom', flag: '🇬🇧' },
   { code: '+86', country: 'China', flag: '🇨🇳' },
   { code: '+81', country: 'Japan', flag: '🇯🇵' },
   { code: '+49', country: 'Germany', flag: '🇩🇪' },
@@ -13,7 +13,7 @@ const countryCodes = [
   { code: '+39', country: 'Italy', flag: '🇮🇹' },
   { code: '+34', country: 'Spain', flag: '🇪🇸' },
   { code: '+61', country: 'Australia', flag: '🇦🇺' },
-  { code: '+971', country: 'UAE', flag: '🇦🇪' },
+  { code: '+971', country: 'United Arab Emirates', flag: '🇦🇪' },
   { code: '+966', country: 'Saudi Arabia', flag: '🇸🇦' },
   { code: '+974', country: 'Qatar', flag: '🇶🇦' },
   { code: '+965', country: 'Kuwait', flag: '🇰🇼' },
@@ -144,8 +144,8 @@ export default function Contact() {
                 {
                   icon: <FaMapMarkerAlt className="w-6 h-6" />,
                   title: "Visit Us",
-                  content: "Industrial Area, Gujarat, INDIA",
-                  link: "#",
+                  content: "6-1-56, Bhagyalaxmi Colony, Manikonda, Hyderabad 500089 (T.S.) India",
+                  link: "https://maps.app.goo.gl/m1T89kzqEjnvVX356",
                   color: "text-[#40E0D0]",
                   bg: "bg-teal-50"
                 }
@@ -171,16 +171,28 @@ export default function Contact() {
 
               {/* Map Preview */}
               <div className="bg-white p-2 rounded-2xl shadow-lg border border-gray-100 h-64 overflow-hidden transform hover:scale-[1.02] transition-transform duration-300">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.998630773956!2d72.57136211496783!3d23.022505584953604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1645511528654!5m2!1sen!2sin"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  title="Map"
-                  className="rounded-xl grayscale hover:grayscale-0 transition-all duration-500"
-                ></iframe>
+                <a
+                  href="https://maps.app.goo.gl/m1T89kzqEjnvVX356"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full h-full relative group"
+                >
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.998630773956!2d72.57136211496783!3d23.022505584953604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1645511528654!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    title="BWPipes Location Map"
+                    className="rounded-xl grayscale hover:grayscale-0 transition-all duration-500"
+                  ></iframe>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all rounded-xl flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 px-4 py-2 rounded-lg shadow-lg text-sm font-semibold text-[#40E0D0]">
+                      Click to open in Google Maps
+                    </div>
+                  </div>
+                </a>
               </div>
             </motion.div>
 
@@ -264,18 +276,25 @@ export default function Contact() {
                           Phone Number
                         </label>
                         <div className="relative flex gap-2">
-                          <select
-                            name="countryCode"
-                            value={formData.countryCode}
-                            onChange={handleChange}
-                            className="px-3 py-4 bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#40E0D0]/30 focus:border-[#40E0D0] transition-all outline-none font-medium text-gray-800 shadow-sm hover:shadow-md appearance-none cursor-pointer min-w-[100px]"
-                          >
-                            {countryCodes.map((item) => (
-                              <option key={item.code} value={item.code}>
-                                {item.flag} {item.code}
-                              </option>
-                            ))}
-                          </select>
+                          <div className="relative group">
+                            <select
+                              name="countryCode"
+                              value={formData.countryCode}
+                              onChange={handleChange}
+                              className="px-3 py-4 bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#40E0D0]/30 focus:border-[#40E0D0] transition-all outline-none font-medium text-gray-800 shadow-sm hover:shadow-md appearance-none cursor-pointer min-w-[100px]"
+                              title={countryCodes.find(c => c.code === formData.countryCode)?.country || ''}
+                            >
+                              {countryCodes.map((item) => (
+                                <option key={item.code} value={item.code}>
+                                  {item.flag} {item.code}
+                                </option>
+                              ))}
+                            </select>
+                            <div className="absolute bottom-full left-0 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50 shadow-lg">
+                              {countryCodes.find(c => c.code === formData.countryCode)?.country || ''}
+                              <div className="absolute top-full left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+                            </div>
+                          </div>
                           <input
                             type="tel"
                             name="phone"

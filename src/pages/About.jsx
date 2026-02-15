@@ -64,7 +64,7 @@ export default function About() {
               </h2>
               <div className="w-32 h-1.5 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] mb-8 rounded-full"></div>
               <p className="font-inter text-[18px] md:text-[20px] text-[#333333] leading-relaxed mb-6">
-                Blue Wave Global is a Hyderabad-based export trading company specializing in high-quality PVC and HDPE piping solutions for global infrastructure, irrigation, and industrial applications. Based in Telangana, India, we combine India's strong manufacturing capabilities with international export expertise to deliver reliable and cost-effective piping products to global markets.
+                Blue Wave Global is a India-based export trading company specializing in high-quality PVC and HDPE piping solutions for global infrastructure, irrigation, and industrial applications. Based in Hyderabad, India, we combine India's strong manufacturing capabilities with international export expertise to deliver reliable and cost-effective piping products to global markets.
               </p>
               <p className="font-inter text-[18px] md:text-[20px] text-[#333333] leading-relaxed">
                 With a commitment to quality and long-term partnerships, Blue Wave Global sources products from trusted and certified manufacturers, ensuring consistency, durability, and compliance with international standards.
@@ -92,61 +92,119 @@ export default function About() {
         </div>
       </section>
 
-      {/* Our Global Reach Section */}
-      <section className="py-24 bg-white">
+      {/* Our Global Reach & Quality & Compliance Section */}
+      <section className="py-24 bg-gradient-to-b from-white to-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="bg-gradient-to-br from-[#F8F9FA] to-white rounded-3xl p-10 md:p-12 border-2 border-[#40E0D0]/20 shadow-xl"
-          >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#40E0D0] to-[#7FFFD4] rounded-2xl flex items-center justify-center shadow-lg">
-                <FaGlobe className="w-8 h-8 text-white" />
-              </div>
-              <h2 className="font-opensans text-[36px] md:text-[42px] font-extrabold text-[#40E0D0]">
-                Our Global Reach
-              </h2>
-            </div>
-            <div className="w-32 h-1.5 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] mb-8 rounded-full"></div>
-            <p className="font-inter text-[18px] md:text-[20px] text-[#333333] leading-relaxed">
-              We currently supply piping solutions to growing infrastructure and water management projects across Kenya and Tanzania, supporting sustainable development and reliable water distribution systems. Our strong export logistics and documentation expertise enable smooth and timely international deliveries.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+          <div className="grid lg:grid-cols-2 gap-10">
+            {/* Our Global Reach Card */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="bg-gradient-to-br from-white to-[#F8F9FA] rounded-3xl p-10 md:p-12 border-2 border-[#40E0D0]/20 shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
+            >
+              {/* Decorative Background Elements */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#40E0D0]/5 rounded-full blur-3xl -mr-32 -mt-32 group-hover:bg-[#40E0D0]/10 transition-all duration-500"></div>
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#7FFFD4]/5 rounded-full blur-2xl -ml-24 -mb-24 group-hover:bg-[#7FFFD4]/10 transition-all duration-500"></div>
+              
+              <div className="relative z-10">
+                {/* Header with Icon */}
+                <div className="flex flex-col md:flex-row md:items-center gap-6 mb-8">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#40E0D0] to-[#7FFFD4] rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <FaGlobe className="w-10 h-10 text-white" />
+                  </div>
+                  <div>
+                    <h2 className="font-opensans text-[32px] md:text-[36px] font-extrabold text-[#40E0D0] mb-2">
+                      Our Global Reach
+                    </h2>
+                    <div className="w-32 h-1.5 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] rounded-full"></div>
+                  </div>
+                </div>
 
-      {/* Quality & Compliance Section */}
-      <section className="py-24 bg-gradient-to-b from-[#F8F9FA] to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="bg-gradient-to-br from-white to-[#F8F9FA] rounded-3xl p-10 md:p-12 border-2 border-[#7FFFD4]/20 shadow-xl"
-          >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#7FFFD4] to-[#40E0D0] rounded-2xl flex items-center justify-center shadow-lg">
-                <FaShieldAlt className="w-8 h-8 text-white" />
+                {/* Content */}
+                <p className="font-inter text-[18px] md:text-[20px] text-[#333333] leading-relaxed">
+                  We currently supply piping solutions to growing infrastructure and water management projects in India and across the world, supporting sustainable development and reliable water distribution systems. Our strong export logistics and documentation expertise enable smooth and timely international deliveries.
+                </p>
               </div>
-              <h2 className="font-opensans text-[36px] md:text-[42px] font-extrabold text-[#40E0D0]">
-                Quality & Compliance
-              </h2>
-            </div>
-            <div className="w-32 h-1.5 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] mb-8 rounded-full"></div>
-            <p className="font-inter text-[18px] md:text-[20px] text-[#333333] leading-relaxed">
-              Blue Wave Global operates with strict quality control practices and holds a valid Import Export Code (IEC) issued by the Government of India. Every product we supply is carefully inspected to ensure durability, performance, and compliance with global industry requirements.
-            </p>
-            <div className="mt-8 flex items-center gap-3">
-              <FaCertificate className="w-6 h-6 text-[#40E0D0]" />
-              <span className="font-inter text-[16px] md:text-[18px] text-[#333333] font-semibold">
-                Valid Import Export Code (IEC) - Government of India
-              </span>
-            </div>
-          </motion.div>
+            </motion.div>
+
+            {/* Quality & Compliance Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="bg-gradient-to-br from-[#F8F9FA] to-white rounded-3xl p-10 md:p-12 border-2 border-[#7FFFD4]/20 shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
+            >
+              {/* Decorative Background Elements */}
+              <div className="absolute top-0 left-0 w-64 h-64 bg-[#7FFFD4]/5 rounded-full blur-3xl -ml-32 -mt-32 group-hover:bg-[#7FFFD4]/10 transition-all duration-500"></div>
+              <div className="absolute bottom-0 right-0 w-48 h-48 bg-[#40E0D0]/5 rounded-full blur-2xl -mr-24 -mb-24 group-hover:bg-[#40E0D0]/10 transition-all duration-500"></div>
+              
+              <div className="relative z-10">
+                {/* Header with Icon */}
+                <div className="flex flex-col md:flex-row md:items-center gap-6 mb-8">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#7FFFD4] to-[#40E0D0] rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <FaShieldAlt className="w-10 h-10 text-white" />
+                  </div>
+                  <div>
+                    <h2 className="font-opensans text-[32px] md:text-[36px] font-extrabold text-[#40E0D0] mb-2">
+                      Quality & Compliance
+                    </h2>
+                    <div className="w-32 h-1.5 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] rounded-full"></div>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <p className="font-inter text-[18px] md:text-[20px] text-[#333333] leading-relaxed mb-6">
+                  Blue Wave Global operates with strict quality control practices and holds a valid Import Export Code (IEC) issued by the Government of India. Every product we supply is carefully inspected to ensure durability, performance, and compliance with global industry requirements.
+                </p>
+
+                {/* Compliance Badges */}
+                <div className="flex flex-col gap-4">
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="flex items-start gap-4 p-5 bg-white/60 backdrop-blur-sm rounded-xl border-2 border-[#40E0D0]/20 hover:border-[#40E0D0]/40 transition-all group/item"
+                  >
+                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#40E0D0] to-[#7FFFD4] rounded-xl flex items-center justify-center shadow-md group-hover/item:scale-110 transition-transform">
+                      <FaCertificate className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-opensans text-[16px] font-bold text-[#40E0D0] mb-1">
+                        Import Export Code (IEC)
+                      </h3>
+                      <p className="font-inter text-[14px] text-[#696969]">
+                        Valid IEC issued by Government of India
+                      </p>
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="flex items-start gap-4 p-5 bg-white/60 backdrop-blur-sm rounded-xl border-2 border-[#7FFFD4]/20 hover:border-[#7FFFD4]/40 transition-all group/item"
+                  >
+                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#7FFFD4] to-[#40E0D0] rounded-xl flex items-center justify-center shadow-md group-hover/item:scale-110 transition-transform">
+                      <FaShieldAlt className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-opensans text-[16px] font-bold text-[#40E0D0] mb-1">
+                        Quality Assurance
+                      </h3>
+                      <p className="font-inter text-[14px] text-[#696969]">
+                        Strict QC practices & international standards
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

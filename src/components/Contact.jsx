@@ -99,8 +99,8 @@ export default function Contact() {
                     </svg>
                   ),
                   title: 'Address',
-                  content: 'Industrial Area, Gujarat, INDIA',
-                  link: '#',
+                  content: '6-1-56, Bhagyalaxmi Colony, Manikonda, Hyderabad 500089 (T.S.) India',
+                  link: 'https://maps.app.goo.gl/m1T89kzqEjnvVX356',
                 },
               ].map((item) => (
                 <div key={item.title} className="flex items-start gap-4 bg-[#F8F9FA] rounded-lg p-5 hover:bg-[#40E0D0] hover:text-white group transition-all">

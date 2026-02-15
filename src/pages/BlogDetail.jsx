@@ -6,7 +6,7 @@ const blogPosts = {
   '1': {
     title: 'PVC vs HDPE Pipes – Which is Better for Infrastructure Projects?',
     date: 'January 15, 2026',
-    author: 'Strux Team',
+    author: 'BWPipes Team',
     sections: [
       {
         id: 'introduction',
@@ -166,7 +166,7 @@ const blogPosts = {
             <li>Environmental regulations and sustainability goals</li>
             <li>Project timeline and availability</li>
           </ul>
-          <p class="mb-4">At Strux, we help you choose the right pipe material based on your project specifications, budget, environmental conditions, and performance requirements. Our team of experts provides comprehensive guidance to ensure optimal selection.</p>
+          <p class="mb-4">At BWPipes, we help you choose the right pipe material based on your project specifications, budget, environmental conditions, and performance requirements. Our team of experts provides comprehensive guidance to ensure optimal selection.</p>
           <p>Contact us today for expert consultation on your infrastructure project. We'll analyze your requirements and recommend the best solution for your specific needs.</p>
         `,
       },
@@ -183,7 +183,7 @@ const blogPosts = {
             <li>Consider environmental factors, pressure requirements, and installation conditions</li>
             <li>Consult with experts to ensure optimal material selection</li>
           </ul>
-          <p>Whether you choose PVC or HDPE, Strux ensures you receive high-quality pipes that meet international standards, backed by comprehensive support and documentation. Our commitment to quality and customer satisfaction makes us your trusted partner for all piping solutions.</p>
+          <p>Whether you choose PVC or HDPE, BWPipes ensures you receive high-quality pipes that meet international standards, backed by comprehensive support and documentation. Our commitment to quality and customer satisfaction makes us your trusted partner for all piping solutions.</p>
         `,
       },
     ],
@@ -191,7 +191,7 @@ const blogPosts = {
   '2': {
     title: 'How to Choose a Reliable PVC Pipe Exporter',
     date: 'January 10, 2026',
-    author: 'Strux Team',
+    author: 'BWPipes Team',
     sections: [
       {
         id: 'introduction',
@@ -353,7 +353,7 @@ const blogPosts = {
         title: 'Conclusion',
         content: `
           <p class="mb-4">Choosing a reliable PVC pipe exporter requires careful evaluation of multiple factors. Focus on quality, certifications, manufacturing capabilities, export experience, and communication.</p>
-          <p class="mb-4">At Strux, we meet all these criteria and more:</p>
+          <p class="mb-4">At BWPipes, we meet all these criteria and more:</p>
           <ul class="list-disc list-inside space-y-2 mb-6">
             <li>ISO certified products with comprehensive documentation</li>
             <li>Verified manufacturing partner network</li>
@@ -372,7 +372,7 @@ const blogPosts = {
   '3': {
     title: 'PVC Pipe Standards Used in Africa and Middle East',
     date: 'January 5, 2026',
-    author: 'Strux Team',
+    author: 'BWPipes Team',
     sections: [
       {
         id: 'introduction',
@@ -528,7 +528,7 @@ const blogPosts = {
         title: 'Conclusion',
         content: `
           <p class="mb-4">Understanding and complying with standards in African and Middle Eastern markets is crucial for successful export operations. Each market has specific requirements that must be met.</p>
-          <p class="mb-4">Strux ensures all products meet the required standards for African and Middle Eastern markets:</p>
+          <p class="mb-4">BWPipes ensures all products meet the required standards for African and Middle Eastern markets:</p>
           <ul class="list-disc list-inside space-y-2 mb-6">
             <li>Products manufactured to ISO, ASTM, and regional standards</li>
             <li>Comprehensive compliance documentation</li>

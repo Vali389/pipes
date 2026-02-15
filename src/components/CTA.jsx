@@ -62,7 +62,7 @@ export default function CTA() {
                 <div>
                   <p className="text-white/60 text-[13px]">Visit Us</p>
                   <p className="text-white font-semibold text-[16px]">
-                    Industrial Area, Gujarat, India
+                    6-1-56, Bhagyalaxmi Colony, Manikonda, Hyderabad 500089 (T.S.) India
                   </p>
                 </div>
               </div>

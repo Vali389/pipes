@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { FaLinkedin, FaInstagram, FaFacebook } from 'react-icons/fa'
 import logoImage from '../assets/WhatsApp Image 2026-02-14 at 12.10.12 AM.jpeg'
 
 const footerLinks = {
@@ -30,7 +31,7 @@ export default function Footer() {
             <div className="mb-6">
               <img
                 src={logoImage}
-                alt="SRUX Logo"
+                alt="BWPipes Logo - Blue Wave Pipes"
                 className="h-20 w-32 object-contain"
                 loading="lazy"
                 style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
@@ -38,9 +39,49 @@ export default function Footer() {
             </div>
             
             {/* Description */}
-            <p className="text-[#696969] font-inter mb-5" style={{ fontSize: '20px', lineHeight: '1.6' }}>
+            <p className="text-[#696969] font-inter mb-6" style={{ fontSize: '20px', lineHeight: '1.6' }}>
               Trusted PVC & HDPE pipe exporter supplying international markets through verified manufacturing partners. Bulk supply, export packaging & quality assurance.
             </p>
+            
+            {/* Social Media Links */}
+            <div className="flex items-center gap-4">
+              <a
+                href="https://www.facebook.com/bwpipes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-[#40E0D0] rounded-full flex items-center justify-center text-white hover:bg-[#1877F2] transition-all duration-300 hover:scale-110"
+                aria-label="Facebook"
+              >
+                <FaFacebook className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/bwpipes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-[#40E0D0] rounded-full flex items-center justify-center text-white hover:bg-[#0077b5] transition-all duration-300 hover:scale-110"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/bwpipes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-[#40E0D0] rounded-full flex items-center justify-center text-white hover:bg-[#E4405F] transition-all duration-300 hover:scale-110"
+                aria-label="Instagram"
+                style={{
+                  background: 'var(--bg-color, #40E0D0)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = '#40E0D0'
+                }}
+              >
+                <FaInstagram className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links Column */}
@@ -83,7 +124,7 @@ export default function Footer() {
       <div className="border-t border-gray-200 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <p className="text-[#696969] text-[13px] font-inter text-center mb-2">
-            © 2026 Strux. All rights reserved.
+            © 2026 BWPipes (Blue Wave Pipes). All rights reserved.
           </p>
           <p className="text-[#696969] text-[11px] font-inter text-center mx-auto">
             <strong>Disclaimer:</strong> We are an independent trading and export company. Manufacturing is carried out at partner facilities. Product images and factory visuals shown are for representation purposes.

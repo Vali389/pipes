@@ -11,7 +11,7 @@ const testimonials = [
     company: 'Infrastructure Solutions Ltd.',
     location: 'Dubai, UAE',
     rating: 5,
-    text: 'Strux has been our reliable partner for PVC pipe imports. Their quality control and export documentation support made our project seamless. Highly recommended!',
+    text: 'BWPipes has been our reliable partner for PVC pipe imports. Their quality control and export documentation support made our project seamless. Highly recommended!',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80',
   },
   {
@@ -19,7 +19,7 @@ const testimonials = [
     company: 'Kenya Water Projects',
     location: 'Nairobi, Kenya',
     rating: 5,
-    text: 'Excellent service and competitive pricing. The HDPE pipes we received met all specifications and arrived on time. Strux understands the African market well.',
+    text: 'Excellent service and competitive pricing. The HDPE pipes we received met all specifications and arrived on time. BWPipes understands the African market well.',
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&q=80',
   },
   {
@@ -27,7 +27,7 @@ const testimonials = [
     company: 'Global Infrastructure Group',
     location: 'London, UK',
     rating: 5,
-    text: 'Working with Strux for our bulk pipe requirements has been a great experience. Their partner network ensures consistent quality and their team is very responsive.',
+    text: 'Working with BWPipes for our bulk pipe requirements has been a great experience. Their partner network ensures consistent quality and their team is very responsive.',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80',
   },
   {
@@ -35,7 +35,7 @@ const testimonials = [
     company: 'South Asia Trading Co.',
     location: 'Mumbai, India',
     rating: 5,
-    text: 'Strux provided us with export-ready PVC pipes that met all international standards. Their packaging and logistics support was exceptional.',
+    text: 'BWPipes provided us with export-ready PVC pipes that met all international standards. Their packaging and logistics support was exceptional.',
     image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&auto=format&fit=crop&q=80',
   },
 ]
@@ -56,7 +56,7 @@ export default function Testimonials() {
             Customer Reviews
           </h2>
           <p className="font-inter text-[18px] text-[#696969]  mx-auto">
-            See what our international clients say about working with Strux for their pipe export needs.
+            See what our international clients say about working with BWPipes for their pipe export needs.
           </p>
         </motion.div>
 

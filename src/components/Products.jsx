@@ -7,28 +7,69 @@ import highPressureImage from '../assets/Screenshot 2026-01-31 191238.png'
 import borewellImage from '../assets/Screenshot 2026-01-31 191331.png'
 import whitePipesImage from '../assets/Screenshot 2026-01-31 191427.png'
 import conduitImage from '../assets/Screenshot 2026-01-31 191508.png'
+import swrImage from '../assets/swr.jpeg'
+import blueCasingImage from '../assets/blue casing pipes.jpeg'
 
 const products = [
   {
     name: 'Red UPVC Drainage Pipes',
     image: redDrainageImage,
+    features: ['Highly resilient, tough, and durable', 'Resistant to rusting, weathering, and chemical action', 'Easy and convenient installation', 'Cost-effective than conventional drainage systems']
   },
   {
     name: 'UPVC High Pressure Pipes',
     image: highPressureImage,
+    features: ['High pressure resistance', 'Excellent durability', 'Corrosion resistant', 'Long service life']
   },
   {
     name: 'UPVC Borewell Casing Pipes',
     image: borewellImage,
+    features: ['Free from corrosion and resistant to biological formations', 'Suitable for all soil types', 'Quick and convenient installation', 'Excellent tensile strength and stiffness']
   },
-
   {
     name: 'White UPVC Pipes',
     image: whitePipesImage,
+    features: ['Lightweight and economical', 'Easy and fast installation', 'Excellent corrosion and chemical resistance', 'High flow rate and long life']
   },
   {
     name: 'Electric Conduit Pipes',
     image: conduitImage,
+    features: ['Protects electrical wiring', 'Fire resistant', 'Easy installation', 'Durable and long-lasting']
+  },
+  {
+    name: 'PVC Rigid Pipes',
+    image: 'https://lh3.googleusercontent.com/d/1LMxonci69L9lJwy6hKq1fUFh_VvQV4h_',
+    features: ['Lightweight and economical', 'Easy and fast installation', 'Excellent corrosion and chemical resistance', 'High flow rate and long life']
+  },
+  {
+    name: 'Blue Casing Pipes',
+    image: blueCasingImage,
+    features: ['Free from corrosion and resistant to biological formations', 'Suitable for all soil types', 'Quick and convenient installation', 'Excellent tensile strength and stiffness']
+  },
+  {
+    name: 'PVC Plumbing Pipes',
+    image: whitePipesImage,
+    features: ['Smooth internal surface', 'Hygienic and odour-free', 'Maintenance-free', 'Long life and economical', 'Available in schedule 40 and 80']
+  },
+  {
+    name: 'SWR Pipes & Fittings',
+    image: swrImage,
+    features: ['Highly resilient, tough, and durable', 'Resistant to rusting, weathering, and chemical action', 'Easy and convenient installation', 'Cost-effective than conventional drainage systems']
+  },
+  {
+    name: 'UGD Pipes',
+    image: 'https://lh3.googleusercontent.com/d/1RQ9WGPLngfpCQCR7Ty-2rnk4WjrWqIg-',
+    features: ['High-quality materials for durability', 'Minimizes clogging, promotes efficient flow', 'Leak-proof connections, easy installation options', 'Various sizes available for different requirements']
+  },
+  {
+    name: 'HDPE Pipes',
+    image: 'https://lh3.googleusercontent.com/d/1Q2sggkobJNHth-ZwLirD_OfhpmU254kz',
+    features: ['Free from corrosion and resistant to chemical reactions', 'Seamless conveyance and flow applications', 'Great for transporting liquids and semi-liquids', 'Long-lasting performance with minimal maintenance']
+  },
+  {
+    name: 'Drip Pipes',
+    image: 'https://lh3.googleusercontent.com/d/12dExCFTDemob0jPGWzijjeLq9js8V_6X',
+    features: ['Lightweight and economical', 'Easy and fast installation', 'Excellent corrosion and chemical resistance', 'High flow rate and long life']
   },
 ]
 
@@ -109,6 +150,20 @@ export default function Products() {
                       className="w-full h-full object-cover"
                       style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
                       loading="lazy"
+                      onError={(e) => {
+                        // Fallback: Try alternative Google Drive URL format
+                        if (product.image.includes('googleusercontent.com')) {
+                          const fileId = product.image.split('/d/')[1]?.split('?')[0] || product.image.split('/d/')[1]
+                          if (fileId) {
+                            e.target.src = `https://drive.google.com/thumbnail?id=${fileId}&sz=w1920-h1080`
+                          }
+                        } else if (product.image.includes('drive.google.com')) {
+                          const fileId = product.image.match(/id=([^&]+)/)?.[1]
+                          if (fileId) {
+                            e.target.src = `https://lh3.googleusercontent.com/d/${fileId}`
+                          }
+                        }
+                      }}
                     />
                   </motion.div>
 
@@ -133,12 +188,57 @@ export default function Products() {
                         {product.name}
                       </h3>
                       <motion.div
-                        className="h-1.5 bg-gradient-to-r from-[#F57C00] to-[#E66D00] rounded-full"
+                        className="h-1.5 bg-gradient-to-r from-[#F57C00] to-[#E66D00] rounded-full mb-4"
                         animate={{
                           width: hoveredProduct === index ? '100%' : '80px',
                         }}
                         transition={{ duration: 0.3 }}
                       ></motion.div>
+                      
+                      {/* Features List - Beautiful Catalog Content */}
+                      {product.features && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{
+                            opacity: hoveredProduct === index ? 1 : 0,
+                            height: hoveredProduct === index ? 'auto' : 0,
+                          }}
+                          transition={{ duration: 0.4, ease: "easeInOut" }}
+                          className="overflow-hidden"
+                        >
+                          <div className="bg-white/95 backdrop-blur-sm rounded-xl p-5 shadow-xl border-2 border-[#40E0D0]/30">
+                            <div className="flex items-center gap-2 mb-3">
+                              <div className="w-1 h-5 bg-gradient-to-b from-[#40E0D0] to-[#7FFFD4] rounded-full"></div>
+                              <h4 className="font-opensans text-[14px] font-bold text-[#40E0D0] uppercase tracking-wider">
+                                Key Features
+                              </h4>
+                            </div>
+                            <ul className="space-y-2.5">
+                              {product.features.map((feature, idx) => (
+                                <motion.li
+                                  key={idx}
+                                  initial={{ opacity: 0, x: -10 }}
+                                  animate={{
+                                    opacity: hoveredProduct === index ? 1 : 0,
+                                    x: hoveredProduct === index ? 0 : -10,
+                                  }}
+                                  transition={{ duration: 0.3, delay: idx * 0.05 }}
+                                  className="flex items-start gap-3 group/feature"
+                                >
+                                  <div className="flex-shrink-0 w-5 h-5 bg-gradient-to-br from-[#40E0D0] to-[#7FFFD4] rounded-full flex items-center justify-center mt-0.5 group-hover/feature:scale-110 transition-transform shadow-sm">
+                                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                    </svg>
+                                  </div>
+                                  <span className="font-inter text-[14px] text-[#333333] leading-relaxed font-medium">
+                                    {feature}
+                                  </span>
+                                </motion.li>
+                              ))}
+                            </ul>
+                          </div>
+                        </motion.div>
+                      )}
                     </motion.div>
                   </div>
 

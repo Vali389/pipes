@@ -33,8 +33,8 @@ export default function Header() {
           <Link to="/" className="">
             <img
               src={logoImage}
-              alt="SRUX Logo"
-              className="h-20 w-[250px]"
+              alt="BWPipes Logo - Blue Wave Pipes"
+              className="h-15 w-[100px]"
             />
           </Link>
 
