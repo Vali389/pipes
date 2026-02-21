@@ -95,8 +95,9 @@ export default function ProductCards() {
                 <Link
                   to="/pvc-pipes"
                   className="px-8 py-3 bg-[#40E0D0] text-white font-bold rounded-lg shadow-lg hover:bg-[#32c9ba] transition-all transform hover:scale-105"
+                  aria-label="Learn more about PVC pipes and fittings"
                 >
-                  Learn More
+                  Learn More About PVC Pipes
                 </Link>
               </div>
             </div>
@@ -188,8 +189,9 @@ export default function ProductCards() {
                 <Link
                   to="/hdpe-pipes"
                   className="px-8 py-3 bg-[#F57C00] text-white font-bold rounded-lg shadow-lg hover:bg-[#e67500] transition-all transform hover:scale-105"
+                  aria-label="Learn more about HDPE pipes and fittings"
                 >
-                  Learn More
+                  Learn More About HDPE Pipes
                 </Link>
               </div>
             </div>

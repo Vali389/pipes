@@ -19,21 +19,32 @@ function doPost(e) {
     // Parse the JSON data from the POST request
     var data = JSON.parse(e.postData.contents);
     
+    // Get the last row number before appending
+    var lastRow = sheet.getLastRow() + 1;
+    
     // Prepare the row data
-    // Order: Name, Email, Contact Number, Message
+    // Order: Name, Email, Contact Number, Company Name, Message, Timestamp
     var rowData = [
       data.name || '',
       data.email || '',
       data.contactNumber || '',
-      data.message || ''
+      data.companyName || '',
+      data.message || '',
+      data.timestamp || ''
     ];
     
-    // Append the row to the sheet
-    sheet.appendRow(rowData);
+    // Use setValues instead of appendRow to have more control
+    var range = sheet.getRange(lastRow, 1, 1, rowData.length);
+    range.setValues([rowData]);
+    
+    // Fix: Set contact number cell format to text to prevent formula parse error
+    // This prevents Google Sheets from interpreting "+91" as a formula
+    var contactNumberCell = sheet.getRange(lastRow, 3); // Column 3 is contact number
+    contactNumberCell.setNumberFormat('@'); // '@' means text format
     
     // Return success response
     return ContentService
-      .createTextOutput(JSON.stringify({ 'result': 'success', 'row': sheet.getLastRow() }))
+      .createTextOutput(JSON.stringify({ 'result': 'success', 'row': lastRow }))
       .setMimeType(ContentService.MimeType.JSON);
       
   } catch (error) {
@@ -93,6 +104,15 @@ function doGet(e) {
 3. Check your Google Sheet - the data should appear in a new row
 
 ## Troubleshooting
+
+### Formula Parse Error for Contact Number?
+**This is the fix!** The script now sets the contact number cell format to text (`@`), which prevents Google Sheets from interpreting "+91" or other numbers starting with "+" or "=" as formulas. Make sure you:
+1. Copy the updated script code above
+2. Paste it into your Apps Script editor
+3. Click **Save** (Ctrl+S or Cmd+S)
+4. Go to **Deploy** → **Manage deployments**
+5. Click the pencil icon (edit) on your deployment
+6. Click **Deploy** to create a new version with the fix
 
 ### Data not appearing in sheet?
 - Make sure the Web App URL is correct

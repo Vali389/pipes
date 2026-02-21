@@ -20,6 +20,14 @@ const footerLinks = {
 }
 
 export default function Footer() {
+  // Scroll to top when footer link is clicked
+  const handleLinkClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
   return (
     <footer className="bg-white text-[#1a1a1a] border-t border-gray-200">
       {/* Main Footer */}
@@ -92,6 +100,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
+                    onClick={handleLinkClick}
                     className="text-[#1a1a1a] text-[18px] font-inter hover:text-[#40E0D0] transition-colors"
                   >
                     {link.name}
@@ -109,6 +118,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
+                    onClick={handleLinkClick}
                     className="text-[#1a1a1a] text-[18px] font-inter hover:text-[#40E0D0] transition-colors"
                   >
                     {link.name}
