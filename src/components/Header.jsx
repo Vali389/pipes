@@ -61,7 +61,7 @@ export default function Header() {
               +91 81257 00615
             </a>
             <motion.a
-              href="#contact"
+              href="/contact"
               className="bg-[#40E0D0] text-white px-7 py-3 text-[15px] font-semibold font-opensans rounded-lg hover:bg-[#F57C00] transition-all shadow-md"
               whileHover={{ y: -1 }}
               style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}

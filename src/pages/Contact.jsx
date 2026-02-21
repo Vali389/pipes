@@ -1,74 +1,292 @@
-import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { useState, useEffect, useRef } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaPaperPlane } from 'react-icons/fa'
 
+// Helper function to get ISO code from country code
+const getCountryISO = (countryCode) => {
+  const codeToISO = {
+    '+1': 'US',
+    '+91': 'IN',
+    '+44': 'GB',
+    '+86': 'CN',
+    '+81': 'JP',
+    '+49': 'DE',
+    '+33': 'FR',
+    '+39': 'IT',
+    '+34': 'ES',
+    '+61': 'AU',
+    '+971': 'AE',
+    '+966': 'SA',
+    '+974': 'QA',
+    '+965': 'KW',
+    '+968': 'OM',
+    '+254': 'KE',
+    '+255': 'TZ',
+    '+256': 'UG',
+    '+234': 'NG',
+    '+233': 'GH',
+    '+27': 'ZA',
+    '+94': 'LK',
+    '+977': 'NP',
+    '+95': 'MM',
+    '+65': 'SG',
+    '+60': 'MY',
+    '+66': 'TH',
+    '+62': 'ID',
+    '+84': 'VN',
+    '+63': 'PH',
+    '+509': 'HT',
+    '+504': 'HN',
+    '+852': 'HK',
+    '+36': 'HU',
+    '+354': 'IS',
+    '+92': 'PK',
+  }
+  return codeToISO[countryCode] || 'US'
+}
+
+// Country Flag Component - Uses ISO code directly for reliable flag display
+const CountryFlag = ({ iso, className = '' }) => {
+  if (!iso) return <span className="text-lg">🌐</span>
+  return (
+    <img
+      src={`https://flagcdn.com/w40/${iso.toLowerCase()}.png`}
+      srcSet={`https://flagcdn.com/w80/${iso.toLowerCase()}.png 2x`}
+      alt={iso}
+      width="24"
+      height="16"
+      style={{ width: 24, height: 16, objectFit: 'cover', borderRadius: 2, flexShrink: 0, display: 'inline-block' }}
+      className={className}
+      onError={(e) => { e.target.style.display = 'none' }}
+    />
+  )
+}
+
 const countryCodes = [
-  { code: '+1', country: 'United States/Canada', flag: '🇺🇸' },
-  { code: '+91', country: 'India', flag: '🇮🇳' },
-  { code: '+44', country: 'United Kingdom', flag: '🇬🇧' },
-  { code: '+86', country: 'China', flag: '🇨🇳' },
-  { code: '+81', country: 'Japan', flag: '🇯🇵' },
-  { code: '+49', country: 'Germany', flag: '🇩🇪' },
-  { code: '+33', country: 'France', flag: '🇫🇷' },
-  { code: '+39', country: 'Italy', flag: '🇮🇹' },
-  { code: '+34', country: 'Spain', flag: '🇪🇸' },
-  { code: '+61', country: 'Australia', flag: '🇦🇺' },
-  { code: '+971', country: 'United Arab Emirates', flag: '🇦🇪' },
-  { code: '+966', country: 'Saudi Arabia', flag: '🇸🇦' },
-  { code: '+974', country: 'Qatar', flag: '🇶🇦' },
-  { code: '+965', country: 'Kuwait', flag: '🇰🇼' },
-  { code: '+968', country: 'Oman', flag: '🇴🇲' },
-  { code: '+254', country: 'Kenya', flag: '🇰🇪' },
-  { code: '+255', country: 'Tanzania', flag: '🇹🇿' },
-  { code: '+256', country: 'Uganda', flag: '🇺🇬' },
-  { code: '+234', country: 'Nigeria', flag: '🇳🇬' },
-  { code: '+233', country: 'Ghana', flag: '🇬🇭' },
-  { code: '+27', country: 'South Africa', flag: '🇿🇦' },
-  { code: '+880', country: 'Bangladesh', flag: '🇧🇩' },
-  { code: '+94', country: 'Sri Lanka', flag: '🇱🇰' },
-  { code: '+977', country: 'Nepal', flag: '🇳🇵' },
-  { code: '+95', country: 'Myanmar', flag: '🇲🇲' },
-  { code: '+65', country: 'Singapore', flag: '🇸🇬' },
-  { code: '+60', country: 'Malaysia', flag: '🇲🇾' },
-  { code: '+66', country: 'Thailand', flag: '🇹🇭' },
-  { code: '+62', country: 'Indonesia', flag: '🇮🇩' },
-  { code: '+84', country: 'Vietnam', flag: '🇻🇳' },
-  { code: '+63', country: 'Philippines', flag: '🇵🇭' },
-]
+  { code: '+1', country: 'United States/Canada', iso: 'US' },
+  { code: '+91', country: 'India', iso: 'IN' },
+  { code: '+44', country: 'United Kingdom', iso: 'GB' },
+  { code: '+86', country: 'China', iso: 'CN' },
+  { code: '+81', country: 'Japan', iso: 'JP' },
+  { code: '+49', country: 'Germany', iso: 'DE' },
+  { code: '+33', country: 'France', iso: 'FR' },
+  { code: '+39', country: 'Italy', iso: 'IT' },
+  { code: '+34', country: 'Spain', iso: 'ES' },
+  { code: '+61', country: 'Australia', iso: 'AU' },
+  { code: '+971', country: 'United Arab Emirates', iso: 'AE' },
+  { code: '+966', country: 'Saudi Arabia', iso: 'SA' },
+  { code: '+974', country: 'Qatar', iso: 'QA' },
+  { code: '+965', country: 'Kuwait', iso: 'KW' },
+  { code: '+968', country: 'Oman', iso: 'OM' },
+  { code: '+254', country: 'Kenya', iso: 'KE' },
+  { code: '+255', country: 'Tanzania', iso: 'TZ' },
+  { code: '+256', country: 'Uganda', iso: 'UG' },
+  { code: '+234', country: 'Nigeria', iso: 'NG' },
+  { code: '+233', country: 'Ghana', iso: 'GH' },
+  { code: '+27', country: 'South Africa', iso: 'ZA' },
+  { code: '+94', country: 'Sri Lanka', iso: 'LK' },
+  { code: '+977', country: 'Nepal', iso: 'NP' },
+  { code: '+95', country: 'Myanmar', iso: 'MM' },
+  { code: '+65', country: 'Singapore', iso: 'SG' },
+  { code: '+60', country: 'Malaysia', iso: 'MY' },
+  { code: '+66', country: 'Thailand', iso: 'TH' },
+  { code: '+62', country: 'Indonesia', iso: 'ID' },
+  { code: '+84', country: 'Vietnam', iso: 'VN' },
+  { code: '+63', country: 'Philippines', iso: 'PH' },
+  { code: '+509', country: 'Haiti', iso: 'HT' },
+  { code: '+504', country: 'Honduras', iso: 'HN' },
+  { code: '+852', country: 'Hong Kong', iso: 'HK' },
+  { code: '+36', country: 'Hungary', iso: 'HU' },
+  { code: '+354', country: 'Iceland', iso: 'IS' },
+  { code: '+92', country: 'Pakistan', iso: 'PK' },
+].sort((a, b) => a.country.localeCompare(b.country))
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    companyName: '',
     countryCode: '+91',
     phone: '',
-    subject: '',
     message: ''
   })
 
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [showToast, setShowToast] = useState(false)
+  const [countryDropdownOpen, setCountryDropdownOpen] = useState(false)
+  const [errors, setErrors] = useState({})
+  const dropdownRef = useRef(null)
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setCountryDropdownOpen(false)
+      }
+    }
+
+    if (countryDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [countryDropdownOpen])
+
+  // Email validation
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return emailRegex.test(email)
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Simulate form submission
-    console.log(formData)
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 5000)
+  // Phone validation
+  const validatePhone = (phone) => {
+    // Remove spaces and special characters, keep only digits
+    const phoneDigits = phone.replace(/\D/g, '')
+    // Phone should have at least 7 digits and max 15 digits
+    return phoneDigits.length >= 7 && phoneDigits.length <= 15
+  }
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    
     setFormData({
-      name: '',
-      email: '',
-      countryCode: '+91',
-      phone: '',
-      subject: '',
-      message: ''
+      ...formData,
+      [name]: value
     })
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors({
+        ...errors,
+        [name]: ''
+      })
+    }
+
+    // Real-time validation
+    if (name === 'email' && value && !validateEmail(value)) {
+      setErrors({
+        ...errors,
+        email: 'Please enter a valid email address'
+      })
+    } else if (name === 'phone' && value && !validatePhone(value)) {
+      setErrors({
+        ...errors,
+        phone: 'Please enter a valid phone number (7-15 digits)'
+      })
+    }
+  }
+
+  const handleCountrySelect = (code) => {
+    setFormData({
+      ...formData,
+      countryCode: code
+    })
+    setCountryDropdownOpen(false)
+  }
+
+  const selectedCountry = countryCodes.find(c => c.code === formData.countryCode) || countryCodes[1]
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    
+    // Validation
+    const newErrors = {}
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required'
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required'
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = 'Please enter a valid email address'
+    }
+    
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Phone number is required'
+    } else if (!validatePhone(formData.phone)) {
+      newErrors.phone = 'Please enter a valid phone number (7-15 digits)'
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required'
+    }
+    
+    // If there are errors, don't submit
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors)
+      return
+    }
+    
+    // Clear any previous errors
+    setErrors({})
+    setIsSubmitting(true)
+    
+    // Prepare data for Google Sheets
+    const contactNumber = `${formData.countryCode} ${formData.phone}`
+    const submissionData = {
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      contactNumber: contactNumber,
+      message: formData.message.trim(),
+      companyName: formData.companyName.trim() || '',
+      timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
+    }
+
+    try {
+      // Google Apps Script Web App URL
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbysbu6f4Ykb8KY4QVwLIZHGAqMik8rvY5WnxSHNsgEJ1jkYf7DU1qrd6kkRpjYWUHGThg/exec'
+      
+      // Submit to Google Sheets
+      if (scriptUrl && scriptUrl !== 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE') {
+        // Use a timeout to ensure we wait for the request
+        await Promise.race([
+          fetch(scriptUrl, {
+            method: 'POST',
+            mode: 'no-cors', // Required for Google Apps Script
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(submissionData)
+          }),
+          new Promise((resolve) => setTimeout(resolve, 2000)) // Max 2 seconds wait
+        ])
+      }
+
+      // Show success message and toast
+      setIsSubmitting(false)
+      setShowToast(true)
+      setSubmitted(true)
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        companyName: '',
+        countryCode: '+91',
+        phone: '',
+        message: ''
+      })
+      
+      // Hide toast after 5 seconds
+      setTimeout(() => {
+        setShowToast(false)
+        setSubmitted(false)
+      }, 5000)
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setIsSubmitting(false)
+      // Show error toast
+      setShowToast(true)
+      setSubmitted(true)
+      setTimeout(() => {
+        setShowToast(false)
+        setSubmitted(false)
+      }, 5000)
+    }
   }
 
   return (
@@ -208,7 +426,7 @@ export default function Contact() {
                 {/* Decorative background */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#40E0D0]/5 to-transparent rounded-full blur-3xl -mr-32 -mt-32"></div>
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-[#7FFFD4]/5 to-transparent rounded-full blur-3xl -ml-32 -mb-32"></div>
-                
+
                 <div className="mb-10 relative z-10">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-1 h-10 bg-gradient-to-b from-[#40E0D0] to-[#7FFFD4] rounded-full"></div>
@@ -245,9 +463,14 @@ export default function Contact() {
                             value={formData.name}
                             onChange={handleChange}
                             required
-                            className="w-full px-5 py-4 bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#40E0D0]/30 focus:border-[#40E0D0] transition-all outline-none font-medium text-gray-800 placeholder-gray-400 shadow-sm hover:shadow-md"
+                            className={`w-full px-5 py-4 bg-gradient-to-br from-gray-50 to-white border-2 rounded-xl focus:ring-2 focus:ring-[#40E0D0]/30 focus:border-[#40E0D0] transition-all outline-none font-medium text-gray-800 placeholder-gray-400 shadow-sm hover:shadow-md ${
+                              errors.name ? 'border-red-500 focus:border-red-500 focus:ring-red-500/30' : 'border-gray-200'
+                            }`}
                             placeholder="Enter your full name"
                           />
+                          {errors.name && (
+                            <p className="mt-2 text-sm text-red-600 font-medium">{errors.name}</p>
+                          )}
                           <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#40E0D0]/0 to-[#7FFFD4]/0 group-focus-within:from-[#40E0D0]/5 group-focus-within:to-[#7FFFD4]/5 transition-all pointer-events-none"></div>
                         </div>
                       </div>
@@ -262,66 +485,110 @@ export default function Contact() {
                             value={formData.email}
                             onChange={handleChange}
                             required
-                            className="w-full px-5 py-4 bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#40E0D0]/30 focus:border-[#40E0D0] transition-all outline-none font-medium text-gray-800 placeholder-gray-400 shadow-sm hover:shadow-md"
+                            className={`w-full px-5 py-4 bg-gradient-to-br from-gray-50 to-white border-2 rounded-xl focus:ring-2 focus:ring-[#40E0D0]/30 focus:border-[#40E0D0] transition-all outline-none font-medium text-gray-800 placeholder-gray-400 shadow-sm hover:shadow-md ${
+                              errors.email ? 'border-red-500 focus:border-red-500 focus:ring-red-500/30' : 'border-gray-200'
+                            }`}
                             placeholder="your.email@example.com"
                           />
+                          {errors.email && (
+                            <p className="mt-2 text-sm text-red-600 font-medium">{errors.email}</p>
+                          )}
                           <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#40E0D0]/0 to-[#7FFFD4]/0 group-focus-within:from-[#40E0D0]/5 group-focus-within:to-[#7FFFD4]/5 transition-all pointer-events-none"></div>
                         </div>
                       </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="group relative">
-                        <label className="block text-sm font-bold text-gray-700 mb-3 group-focus-within:text-[#40E0D0] transition-colors">
-                          Phone Number
-                        </label>
-                        <div className="relative flex gap-2">
-                          <div className="relative group">
-                            <select
-                              name="countryCode"
-                              value={formData.countryCode}
-                              onChange={handleChange}
-                              className="px-3 py-4 bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#40E0D0]/30 focus:border-[#40E0D0] transition-all outline-none font-medium text-gray-800 shadow-sm hover:shadow-md appearance-none cursor-pointer min-w-[100px]"
-                              title={countryCodes.find(c => c.code === formData.countryCode)?.country || ''}
+                    <div className="group relative">
+                      <label className="block text-sm font-bold text-gray-700 mb-3 group-focus-within:text-[#40E0D0] transition-colors">
+                        Company Name
+                      </label>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          name="companyName"
+                          value={formData.companyName}
+                          onChange={handleChange}
+                          className="w-full px-5 py-4 bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#40E0D0]/30 focus:border-[#40E0D0] transition-all outline-none font-medium text-gray-800 placeholder-gray-400 shadow-sm hover:shadow-md"
+                          placeholder="Enter Business Name or Website"
+                        />
+                        <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#40E0D0]/0 to-[#7FFFD4]/0 group-focus-within:from-[#40E0D0]/5 group-focus-within:to-[#7FFFD4]/5 transition-all pointer-events-none"></div>
+                      </div>
+                    </div>
+
+                    <div className="group relative">
+                      <label className="block text-sm font-bold text-gray-700 mb-3 group-focus-within:text-[#40E0D0] transition-colors">
+                        Contact Number <span className="text-red-500">*</span>
+                      </label>
+                      {/* Combined Input Field - Single Border */}
+                      <div className="relative flex items-center bg-white border-2 border-gray-200 rounded-xl focus-within:ring-2 focus-within:ring-[#40E0D0]/30 focus-within:border-[#40E0D0] transition-all shadow-sm hover:shadow-md">
+                        {/* Left Section - Country Code Selector (Grey Background) */}
+                        <div ref={dropdownRef} className="relative flex-shrink-0">
+                          <button
+                            type="button"
+                            onClick={() => setCountryDropdownOpen(!countryDropdownOpen)}
+                            className="px-3 py-4 bg-gray-50 hover:bg-gray-100 transition-colors flex items-center gap-2 border-r border-gray-200 h-full"
+                          >
+                            <CountryFlag iso={selectedCountry.iso} />
+                            <svg
+                              className={`w-3 h-3 text-gray-500 transition-transform ${countryDropdownOpen ? 'rotate-180' : ''}`}
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
                             >
-                              {countryCodes.map((item) => (
-                                <option key={item.code} value={item.code}>
-                                  {item.flag} {item.code}
-                                </option>
-                              ))}
-                            </select>
-                            <div className="absolute bottom-full left-0 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50 shadow-lg">
-                              {countryCodes.find(c => c.code === formData.countryCode)?.country || ''}
-                              <div className="absolute top-full left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
-                            </div>
-                          </div>
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </button>
+
+                          {/* Dropdown Menu */}
+                          <AnimatePresence>
+                            {countryDropdownOpen && (
+                              <motion.div
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                                transition={{ duration: 0.2 }}
+                                className="absolute top-full left-0 mt-2 w-[280px] bg-white border-2 border-gray-200 rounded-xl shadow-xl z-[9999] max-h-[300px] overflow-y-auto"
+                              >
+                                <div className="py-2">
+                                  {countryCodes.map((country) => (
+                                    <button
+                                      key={country.code}
+                                      type="button"
+                                      onClick={() => handleCountrySelect(country.code)}
+                                      className={`w-full px-4 py-3 flex items-center gap-3 hover:bg-gray-50 transition-colors text-left ${formData.countryCode === country.code ? 'bg-gray-100' : ''
+                                        }`}
+                                    >
+                                      <CountryFlag iso={country.iso} />
+                                      <span className="flex-1 text-sm text-gray-800 font-medium truncate">{country.country}</span>
+                                      <span className="text-sm text-[#40E0D0] font-semibold flex-shrink-0">{country.code}</span>
+                                    </button>
+                                  ))}
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+
+                        {/* Right Section - Phone Number Input (White Background) */}
+                        <div className="flex-1 flex items-center">
+                          <span className="px-2 text-gray-600 font-medium">{selectedCountry.code}</span>
                           <input
                             type="tel"
                             name="phone"
                             value={formData.phone}
                             onChange={handleChange}
-                            className="flex-1 px-5 py-4 bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#40E0D0]/30 focus:border-[#40E0D0] transition-all outline-none font-medium text-gray-800 placeholder-gray-400 shadow-sm hover:shadow-md"
-                            placeholder="98765 43210"
+                            required
+                            className={`flex-1 px-3 py-4 bg-transparent border-0 focus:outline-none font-medium placeholder-gray-400 ${
+                              errors.phone ? 'text-red-600' : 'text-gray-800'
+                            }`}
+                            placeholder="Enter phone number"
                           />
-                          <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#40E0D0]/0 to-[#7FFFD4]/0 group-focus-within:from-[#40E0D0]/5 group-focus-within:to-[#7FFFD4]/5 transition-all pointer-events-none"></div>
                         </div>
                       </div>
-                      <div className="group relative">
-                        <label className="block text-sm font-bold text-gray-700 mb-3 group-focus-within:text-[#40E0D0] transition-colors">
-                          Subject
-                        </label>
-                        <div className="relative">
-                          <input
-                            type="text"
-                            name="subject"
-                            value={formData.subject}
-                            onChange={handleChange}
-                            className="w-full px-5 py-4 bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#40E0D0]/30 focus:border-[#40E0D0] transition-all outline-none font-medium text-gray-800 placeholder-gray-400 shadow-sm hover:shadow-md"
-                            placeholder="Project Inquiry"
-                          />
-                          <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#40E0D0]/0 to-[#7FFFD4]/0 group-focus-within:from-[#40E0D0]/5 group-focus-within:to-[#7FFFD4]/5 transition-all pointer-events-none"></div>
-                        </div>
-                      </div>
+                      {errors.phone && (
+                        <p className="mt-2 text-sm text-red-600 font-medium">{errors.phone}</p>
+                      )}
+                      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#40E0D0]/0 to-[#7FFFD4]/0 group-focus-within:from-[#40E0D0]/5 group-focus-within:to-[#7FFFD4]/5 transition-all pointer-events-none"></div>
                     </div>
 
                     <div className="group relative">
@@ -335,24 +602,44 @@ export default function Contact() {
                           onChange={handleChange}
                           required
                           rows="6"
-                          className="w-full px-5 py-4 bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#40E0D0]/30 focus:border-[#40E0D0] transition-all outline-none resize-none font-medium text-gray-800 placeholder-gray-400 shadow-sm hover:shadow-md"
+                          className={`w-full px-5 py-4 bg-gradient-to-br from-gray-50 to-white border-2 rounded-xl focus:ring-2 focus:ring-[#40E0D0]/30 focus:border-[#40E0D0] transition-all outline-none resize-none font-medium text-gray-800 placeholder-gray-400 shadow-sm hover:shadow-md ${
+                            errors.message ? 'border-red-500 focus:border-red-500 focus:ring-red-500/30' : 'border-gray-200'
+                          }`}
                           placeholder="Tell us more about your requirements, project details, or any questions you have..."
                         ></textarea>
+                        {errors.message && (
+                          <p className="mt-2 text-sm text-red-600 font-medium">{errors.message}</p>
+                        )}
                         <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#40E0D0]/0 to-[#7FFFD4]/0 group-focus-within:from-[#40E0D0]/5 group-focus-within:to-[#7FFFD4]/5 transition-all pointer-events-none"></div>
                       </div>
                     </div>
 
                     <motion.button
-                      whileHover={{ scale: 1.02, y: -2 }}
-                      whileTap={{ scale: 0.98 }}
+                      whileHover={!isSubmitting ? { scale: 1.02, y: -2 } : {}}
+                      whileTap={!isSubmitting ? { scale: 0.98 } : {}}
                       type="submit"
-                      className="w-full bg-gradient-to-r from-[#40E0D0] to-[#7FFFD4] hover:from-[#2bb8aa] hover:to-[#6ee5c7] text-white py-5 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-3 group relative overflow-hidden"
+                      disabled={isSubmitting}
+                      className={`w-full bg-gradient-to-r from-[#40E0D0] to-[#7FFFD4] hover:from-[#2bb8aa] hover:to-[#6ee5c7] text-white py-5 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-3 group relative overflow-hidden ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
                     >
                       <span className="relative z-10 flex items-center gap-3">
-                        <span>Send Message</span>
-                        <FaPaperPlane className="group-hover:translate-x-1 transition-transform" />
+                        {isSubmitting ? (
+                          <>
+                            <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            <span>Sending...</span>
+                          </>
+                        ) : (
+                          <>
+                            <span>Send Message</span>
+                            <FaPaperPlane className="group-hover:translate-x-1 transition-transform" />
+                          </>
+                        )}
                       </span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                      {!isSubmitting && (
+                        <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                      )}
                     </motion.button>
                   </form>
                 )}
@@ -361,6 +648,38 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      {/* Toast Notification */}
+      <AnimatePresence>
+        {showToast && (
+          <motion.div
+            initial={{ opacity: 0, y: -50, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -50, scale: 0.9 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="fixed top-6 right-6 z-[9999] max-w-md"
+          >
+            <div className="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-4 border border-green-400/30">
+              <div className="flex-shrink-0 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                <FaPaperPlane className="w-5 h-5" />
+              </div>
+              <div className="flex-1">
+                <h4 className="font-bold text-lg mb-1">Message Sent Successfully!</h4>
+                <p className="text-sm text-white/90">Thank you for contacting us. We'll get back to you soon.</p>
+              </div>
+              <button
+                onClick={() => setShowToast(false)}
+                className="flex-shrink-0 w-6 h-6 flex items-center justify-center hover:bg-white/20 rounded-full transition-colors"
+                aria-label="Close"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </div>
   )

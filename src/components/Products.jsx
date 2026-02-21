@@ -3,8 +3,6 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import productBackground from '../assets/product page background image.jpeg'
 import redDrainageImage from '../assets/Screenshot 2026-01-31 191127.png'
-import highPressureImage from '../assets/Screenshot 2026-01-31 191238.png'
-import borewellImage from '../assets/Screenshot 2026-01-31 191331.png'
 import whitePipesImage from '../assets/Screenshot 2026-01-31 191427.png'
 import conduitImage from '../assets/Screenshot 2026-01-31 191508.png'
 import swrImage from '../assets/swr.jpeg'
@@ -15,16 +13,6 @@ const products = [
     name: 'Red UPVC Drainage Pipes',
     image: redDrainageImage,
     features: ['Highly resilient, tough, and durable', 'Resistant to rusting, weathering, and chemical action', 'Easy and convenient installation', 'Cost-effective than conventional drainage systems']
-  },
-  {
-    name: 'UPVC High Pressure Pipes',
-    image: highPressureImage,
-    features: ['High pressure resistance', 'Excellent durability', 'Corrosion resistant', 'Long service life']
-  },
-  {
-    name: 'UPVC Borewell Casing Pipes',
-    image: borewellImage,
-    features: ['Free from corrosion and resistant to biological formations', 'Suitable for all soil types', 'Quick and convenient installation', 'Excellent tensile strength and stiffness']
   },
   {
     name: 'White UPVC Pipes',

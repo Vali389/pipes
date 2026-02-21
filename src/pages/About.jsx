@@ -97,13 +97,13 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-10">
             {/* Our Global Reach Card */}
-            <motion.div
+          <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
               className="bg-gradient-to-br from-white to-[#F8F9FA] rounded-3xl p-10 md:p-12 border-2 border-[#40E0D0]/20 shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
-            >
+          >
               {/* Decorative Background Elements */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#40E0D0]/5 rounded-full blur-3xl -mr-32 -mt-32 group-hover:bg-[#40E0D0]/10 transition-all duration-500"></div>
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#7FFFD4]/5 rounded-full blur-2xl -ml-24 -mb-24 group-hover:bg-[#7FFFD4]/10 transition-all duration-500"></div>
@@ -113,30 +113,30 @@ export default function About() {
                 <div className="flex flex-col md:flex-row md:items-center gap-6 mb-8">
                   <div className="w-20 h-20 bg-gradient-to-br from-[#40E0D0] to-[#7FFFD4] rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <FaGlobe className="w-10 h-10 text-white" />
-                  </div>
+              </div>
                   <div>
                     <h2 className="font-opensans text-[32px] md:text-[36px] font-extrabold text-[#40E0D0] mb-2">
-                      Our Global Reach
-                    </h2>
+                Our Global Reach
+              </h2>
                     <div className="w-32 h-1.5 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] rounded-full"></div>
                   </div>
-                </div>
+            </div>
 
                 {/* Content */}
-                <p className="font-inter text-[18px] md:text-[20px] text-[#333333] leading-relaxed">
+            <p className="font-inter text-[18px] md:text-[20px] text-[#333333] leading-relaxed">
                   We currently supply piping solutions to growing infrastructure and water management projects in India and across the world, supporting sustainable development and reliable water distribution systems. Our strong export logistics and documentation expertise enable smooth and timely international deliveries.
-                </p>
+            </p>
               </div>
-            </motion.div>
+          </motion.div>
 
             {/* Quality & Compliance Card */}
-            <motion.div
+          <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
               className="bg-gradient-to-br from-[#F8F9FA] to-white rounded-3xl p-10 md:p-12 border-2 border-[#7FFFD4]/20 shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
-            >
+          >
               {/* Decorative Background Elements */}
               <div className="absolute top-0 left-0 w-64 h-64 bg-[#7FFFD4]/5 rounded-full blur-3xl -ml-32 -mt-32 group-hover:bg-[#7FFFD4]/10 transition-all duration-500"></div>
               <div className="absolute bottom-0 right-0 w-48 h-48 bg-[#40E0D0]/5 rounded-full blur-2xl -mr-24 -mb-24 group-hover:bg-[#40E0D0]/10 transition-all duration-500"></div>
@@ -146,19 +146,19 @@ export default function About() {
                 <div className="flex flex-col md:flex-row md:items-center gap-6 mb-8">
                   <div className="w-20 h-20 bg-gradient-to-br from-[#7FFFD4] to-[#40E0D0] rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <FaShieldAlt className="w-10 h-10 text-white" />
-                  </div>
+              </div>
                   <div>
                     <h2 className="font-opensans text-[32px] md:text-[36px] font-extrabold text-[#40E0D0] mb-2">
-                      Quality & Compliance
-                    </h2>
+                Quality & Compliance
+              </h2>
                     <div className="w-32 h-1.5 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] rounded-full"></div>
                   </div>
-                </div>
+            </div>
 
                 {/* Content */}
                 <p className="font-inter text-[18px] md:text-[20px] text-[#333333] leading-relaxed mb-6">
-                  Blue Wave Global operates with strict quality control practices and holds a valid Import Export Code (IEC) issued by the Government of India. Every product we supply is carefully inspected to ensure durability, performance, and compliance with global industry requirements.
-                </p>
+              Blue Wave Global operates with strict quality control practices and holds a valid Import Export Code (IEC) issued by the Government of India. Every product we supply is carefully inspected to ensure durability, performance, and compliance with global industry requirements.
+            </p>
 
                 {/* Compliance Badges */}
                 <div className="flex flex-col gap-4">
@@ -202,8 +202,8 @@ export default function About() {
                     </div>
                   </motion.div>
                 </div>
-              </div>
-            </motion.div>
+            </div>
+          </motion.div>
           </div>
         </div>
       </section>
@@ -445,56 +445,56 @@ export default function About() {
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -ml-48 -mb-48"></div>
             
             <div className="relative z-10">
-              {/* Main Heading */}
+            {/* Main Heading */}
               <h2 className="font-opensans text-[42px] md:text-[52px] lg:text-[60px] font-extrabold text-white mb-6 text-center">
-                Ready to Work Together?
-              </h2>
-              
-              {/* Description */}
+              Ready to Work Together?
+            </h2>
+            
+            {/* Description */}
               <p className="font-inter text-[18px] md:text-[20px] text-white/95 text-center  leading-relaxed mb-19  font-medium">
-                Let's discuss how we can support your next project with our premium piping solutions. Our expert team is ready to help you find the perfect solution for your infrastructure needs.
-              </p>
-              
+              Let's discuss how we can support your next project with our premium piping solutions. Our expert team is ready to help you find the perfect solution for your infrastructure needs.
+            </p>
+            
               {/* CTA Cards - Beautiful Frosted Glass Style */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
-                {[
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+              {[
                   { icon: "💬", title: "WhatsApp Us", desc: "Chat with us", action: "https://wa.me/918125700615" },
-                  { icon: "📞", title: "Call Us", desc: "Direct communication", action: "tel:+918125700615" },
+                { icon: "📞", title: "Call Us", desc: "Direct communication", action: "tel:+918125700615" },
                   { icon: "✉️", title: "Email Us", desc: "Send us a message", action: "mailto:info@bwpipes.com" }
-                ].map((item, index) => (
-                  <motion.a
-                    key={index}
-                    href={item.action}
+              ].map((item, index) => (
+                <motion.a
+                  key={index}
+                  href={item.action}
                     initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     className="group bg-white/10 backdrop-blur-md rounded-xl p-8 text-center hover:bg-white/20 transition-all border border-white/20 hover:border-white/40 hover:shadow-xl"
                     whileHover={{ y: -4, scale: 1.02 }}
                     style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
-                  >
+                >
                     <div className="text-[#F57C00] text-[48px] font-extrabold font-opensans mb-3">{item.icon}</div>
                     <h3 className="font-opensans text-[#F57C00] text-[24px] font-extrabold mb-2">{item.title}</h3>
                     <p className="font-inter text-white text-[15px] font-medium">{item.desc}</p>
-                  </motion.a>
-                ))}
-              </div>
-              
-              {/* Main CTA Button */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                </motion.a>
+              ))}
+            </div>
+            
+            {/* Main CTA Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-center"
+            >
+              <Link 
+                to="/contact" 
+                className="inline-block px-12 py-5 bg-[#F57C00] hover:bg-[#e67500] text-white font-bold rounded-xl shadow-2xl hover:shadow-[#F57C00]/50 transition-all uppercase tracking-wide text-[18px] md:text-[20px] transform hover:-translate-y-1 hover:scale-105"
               >
-                <Link 
-                  to="/contact" 
-                  className="inline-block px-12 py-5 bg-[#F57C00] hover:bg-[#e67500] text-white font-bold rounded-xl shadow-2xl hover:shadow-[#F57C00]/50 transition-all uppercase tracking-wide text-[18px] md:text-[20px] transform hover:-translate-y-1 hover:scale-105"
-                >
-                  Get in Touch
-                </Link>
-              </motion.div>
+                Get in Touch
+              </Link>
+            </motion.div>
             </div>
           </motion.div>
         </div>

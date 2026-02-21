@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation, Pagination, EffectFade } from 'swiper/modules'
 import { FaChevronRight, FaCaretLeft, FaCaretRight } from 'react-icons/fa'
@@ -165,24 +166,30 @@ export default function Hero() {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-6 mb-16">
-                  <motion.a
-                    href="#contact"
-                    whileHover={{ scale: 1.05, backgroundColor: "#E66D00" }}
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-10 py-4 bg-[#F57C00] text-white text-lg font-bold font-opensans rounded-lg transition-colors shadow-lg shadow-[#F57C00]/30 flex items-center justify-center gap-2"
                   >
-                    Get a Quote
-                    <FaChevronRight className="w-4 h-4" />
-                  </motion.a>
+                    <Link
+                      to="/contact"
+                      className="px-10 py-4 bg-[#F57C00] hover:bg-[#E66D00] text-white text-lg font-bold font-opensans rounded-lg transition-colors shadow-lg shadow-[#F57C00]/30 flex items-center justify-center gap-2"
+                    >
+                      Get a Quote
+                      <FaChevronRight className="w-4 h-4" />
+                    </Link>
+                  </motion.div>
 
-                  <motion.a
-                    href="#products"
-                    whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-10 py-4 bg-transparent border-2 border-white text-white text-lg font-bold font-opensans rounded-lg transition-colors shadow-lg hover:border-[#40E0D0] hover:text-[#40E0D0] flex items-center justify-center gap-2"
                   >
-                    View Products
-                  </motion.a>
+                    <Link
+                      to="/products"
+                      className="px-10 py-4 bg-transparent border-2 border-white text-white text-lg font-bold font-opensans rounded-lg transition-colors shadow-lg hover:border-[#40E0D0] hover:text-[#40E0D0] flex items-center justify-center gap-2"
+                    >
+                      View Products
+                    </Link>
+                  </motion.div>
                 </div>
 
                 {/* Animated Stats (Hidden on small screens for clarity) */}
