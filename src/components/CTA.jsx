@@ -1,6 +1,6 @@
 export default function CTA() {
   return (
-    <section id="contact" className="py-20 bg-[#016D9B]">
+    <section id="contact" className="py-14 bg-[#016D9B]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left - Contact Info */}
@@ -14,11 +14,11 @@ export default function CTA() {
               </span>
             </div>
             
-            <h2 className="font-opensans text-[28px] lg:text-[36px] font-extrabold text-white leading-[1.15] mb-6">
+            <h2 className="font-opensans text-[28px] lg:text-[36px] font-extrabold text-white leading-[1.15] mb-4">
               Ready to Start<br />Your Project?
             </h2>
             
-            <p className="font-inter text-[16px] text-white/80 leading-[1.7] mb-10 max-w-md">
+            <p className="font-inter text-[16px] text-white/80 leading-[1.7] mb-6 max-w-md">
               Contact us today for the best quality PVC pipes at competitive prices. Our team is ready to assist you.
             </p>
 
@@ -32,8 +32,8 @@ export default function CTA() {
                 </div>
                 <div>
                   <p className="text-white/60 text-[13px]">Call Us</p>
-                  <a href="https://wa.me/918125700615" target="_blank" rel="noopener noreferrer" className="text-white font-semibold text-[16px] hover:text-[#F7941E] transition-colors">
-                    +91 81257 00615
+                  <a href="https://wa.me/917416057510" target="_blank" rel="noopener noreferrer" className="text-white font-semibold text-[16px] hover:text-[#F7941E] transition-colors">
+                    +91 74160 57510
                   </a>
                 </div>
               </div>
@@ -71,7 +71,7 @@ export default function CTA() {
 
           {/* Right - Form */}
           <div className="bg-white rounded-2xl p-8 shadow-2xl">
-            <h3 className="font-opensans text-[24px] font-bold text-[#373A3F] mb-6">
+            <h3 className="font-opensans text-[24px] font-bold text-[#373A3F] mb-4">
               Request a Quote
             </h3>
             
@@ -98,7 +98,6 @@ export default function CTA() {
               <select className="w-full px-4 py-3 bg-[#F8FAFB] border border-gray-200 rounded-lg font-inter text-[14px] text-[#696969] focus:outline-none focus:border-[#016D9B] focus:ring-1 focus:ring-[#016D9B] transition-colors">
                 <option value="">Select Product</option>
                 <option value="rigid-pvc">Rigid PVC Pipes</option>
-                <option value="upvc">UPVC Pipes</option>
                 <option value="garden">Garden Pipes</option>
                 <option value="suction">Suction Pipes</option>
               </select>

@@ -24,7 +24,7 @@ const blogPosts = [
 
 export default function Blog() {
   return (
-    <section id="blog" className="py-20 bg-[#F8F9FA]">
+    <section id="blog" className="py-14 bg-[#F8F9FA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -60,7 +60,7 @@ export default function Blog() {
               <h3 className="font-opensans text-[22px] font-bold text-[#40E0D0] mb-4 group-hover:text-[#0a2d47] transition-colors line-clamp-2">
                 {post.title}
               </h3>
-              <p className="font-inter text-[17px] text-[#333333] leading-[1.8] mb-6 line-clamp-3">
+              <p className="font-inter text-[17px] text-[#333333] leading-[1.8] mb-4 line-clamp-3">
                 {post.excerpt}
               </p>
               <Link

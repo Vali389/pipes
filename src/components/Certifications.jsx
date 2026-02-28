@@ -60,7 +60,7 @@ export default function Certifications() {
   }, [])
 
   return (
-    <section id="certifications" className="py-20 bg-[#F8F9FA]">
+    <section id="certifications" className="py-14 bg-[#F8F9FA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -72,7 +72,7 @@ export default function Certifications() {
           <h2 className="font-opensans text-[28px] lg:text-[38px] font-extrabold text-[#40E0D0] leading-[1.2] mb-4">
             Quality &amp; Certifications
           </h2>
-          <div className="w-24 h-1 bg-[#40E0D0] mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-[#40E0D0] mx-auto mb-4"></div>
           <p className="font-inter text-[20px] text-[#333333]  leading-relaxed">
             All products are sourced from ISO-certified manufacturing units and tested to meet international quality standards.
             Third-party inspection and detailed test certificates can be arranged on request for project documentation.
@@ -101,7 +101,7 @@ export default function Certifications() {
                 }}
               >
                 {/* Logo Placeholder */}
-                <div className="w-24 h-24 bg-gradient-to-br from-[#40E0D0] to-[#7FFFD4] rounded-lg flex items-center justify-center mx-auto mb-6">
+                <div className="w-24 h-24 bg-gradient-to-br from-[#40E0D0] to-[#7FFFD4] rounded-lg flex items-center justify-center mx-auto mb-4">
                   <span className="text-white font-opensans font-bold text-xl">{cert.logo}</span>
                 </div>
 

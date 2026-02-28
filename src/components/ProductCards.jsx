@@ -5,7 +5,7 @@ import highPressureImage from '../assets/Screenshot 2026-01-31 191238.png'
 
 export default function ProductCards() {
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-[#F8F9FA]">
+    <section className="py-16 bg-gradient-to-b from-white to-[#F8F9FA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8">
           {/* PVC Pipes & Fittings */}
@@ -22,7 +22,7 @@ export default function ProductCards() {
 
             <div className="relative p-8 flex flex-col h-full">
               {/* Icon Header */}
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex items-center gap-4 mb-4">
                 <div className="w-16 h-16 bg-gradient-to-br from-[#40E0D0] to-[#7FFFD4] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform flex-shrink-0">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -33,12 +33,12 @@ export default function ProductCards() {
                 </h3>
               </div>
 
-              <p className="font-inter text-[17px] text-[#333333] leading-relaxed mb-8">
+              <p className="font-inter text-[17px] text-[#333333] leading-relaxed mb-4">
                 PVC pipes are widely used for water supply, drainage and agricultural applications due to their durability, corrosion resistance and cost efficiency.
               </p>
 
               {/* Key Applications */}
-              <div className="mb-8 flex-grow">
+              <div className="mb-4 flex-grow">
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-1 h-6 bg-gradient-to-b from-[#F57C00] to-[#E66D00] rounded-full"></div>
                   <h4 className="font-opensans text-[15px] font-bold text-[#F57C00] uppercase tracking-wider">
@@ -117,7 +117,7 @@ export default function ProductCards() {
 
             <div className="relative p-8 flex flex-col h-full">
               {/* Icon Header */}
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex items-center gap-4 mb-4">
                 <div className="w-16 h-16 bg-gradient-to-br from-[#7FFFD4] to-[#40E0D0] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -128,12 +128,12 @@ export default function ProductCards() {
                 </h3>
               </div>
 
-              <p className="font-inter text-[17px] text-[#333333] leading-relaxed mb-8">
+              <p className="font-inter text-[17px] text-[#333333] leading-relaxed mb-4">
                 HDPE pipes are known for their high strength, flexibility and long service life, making them ideal for demanding environments and critical infrastructure.
               </p>
 
               {/* Key Applications */}
-              <div className="mb-8 flex-grow">
+              <div className="mb-4 flex-grow">
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-1 h-6 bg-gradient-to-b from-[#F57C00] to-[#E66D00] rounded-full"></div>
                   <h4 className="font-opensans text-[15px] font-bold text-[#F57C00] uppercase tracking-wider">

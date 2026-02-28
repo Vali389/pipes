@@ -1,8 +1,15 @@
 import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false)
+  const { pathname } = useLocation()
+
+  // Scroll to top when route changes (e.g. About Us, Products)
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [pathname])
 
   useEffect(() => {
     const toggleVisibility = () => {

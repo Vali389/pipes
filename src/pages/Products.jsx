@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion'
 import ProductsSection from '../components/Products'
 import ProductCards from '../components/ProductCards'
-import Standards from '../components/Standards'
-import Packaging from '../components/Packaging'
 import productBg from '../assets/product page background image.jpeg'
 
 export default function Products() {
@@ -35,13 +33,13 @@ export default function Products() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-block mb-6"
+              className="inline-block mb-4"
             >
               <span className="px-6 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-sm font-bold uppercase tracking-wider">
                 Premium Quality
               </span>
             </motion.div>
-            <h1 className="font-opensans text-[48px] md:text-[56px] lg:text-[64px] font-extrabold mb-6 drop-shadow-2xl">
+            <h1 className="font-opensans text-[48px] md:text-[56px] lg:text-[64px] font-extrabold mb-4 drop-shadow-2xl">
               Our Products
             </h1>
             <p className="font-inter text-[20px] md:text-[22px] text-white mx-auto max-w-2xl leading-relaxed drop-shadow-lg" style={{ opacity: 1, color: '#ffffff' }}>
@@ -53,8 +51,6 @@ export default function Products() {
 
       <ProductCards />
       <ProductsSection />
-      <Standards />
-      <Packaging />
     </>
   )
 }

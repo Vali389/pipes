@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import facilitiesImage1 from '../assets/IMG_0889.JPG'
-import facilitiesImage2 from '../assets/IMG_0883.JPG'
+import outdoorStorageImage from '../assets/IMG_1171.JPG'
 
 const warehouseFeatures = [
   { title: 'Climate-Controlled Areas', icon: '🌡️' },
@@ -18,7 +18,7 @@ const outdoorFeatures = [
 
 export default function Facilities() {
   return (
-    <section id="facilities" className="py-20 bg-white">
+    <section id="facilities" className="py-14 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -26,12 +26,12 @@ export default function Facilities() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <h2 className="font-opensans text-[28px] lg:text-[38px] font-extrabold text-[#40E0D0] leading-[1.2] mb-4">
             Our Storage & Distribution Facilities
           </h2>
-          <div className="w-24 h-1 bg-[#40E0D0] mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-[#40E0D0] mx-auto mb-4"></div>
           <p className="font-inter text-[25px] text-[#333333]  mx-auto">
             State-of-the-art storage facilities ensuring proper handling and preservation of pipes before export
           </p>
@@ -67,7 +67,7 @@ export default function Facilities() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-[#40E0D0] to-[#7FFFD4] rounded-xl flex items-center justify-center text-2xl">
                   🏭
                 </div>
@@ -75,7 +75,7 @@ export default function Facilities() {
                   Modern Warehouse Facilities
                 </h3>
               </div>
-              <p className="font-inter text-[19px] text-[#333333] leading-relaxed mb-8">
+              <p className="font-inter text-[19px] text-[#333333] leading-relaxed mb-4">
                 Our partner facilities include modern warehouses equipped with proper storage systems, ensuring pipes are protected from environmental factors and maintained in optimal condition until dispatch.
               </p>
               <div className="grid grid-cols-2 gap-4">
@@ -108,7 +108,7 @@ export default function Facilities() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 bg-gradient-to-br from-[#F57C00] to-[#E66D00] rounded-xl flex items-center justify-center text-2xl">
                 🏗️
               </div>
@@ -116,7 +116,7 @@ export default function Facilities() {
                 Outdoor Storage Yards
               </h3>
             </div>
-            <p className="font-inter text-[19px] text-[#333333] leading-relaxed mb-8">
+            <p className="font-inter text-[19px] text-[#333333] leading-relaxed mb-4">
               Large outdoor storage yards accommodate bulk quantities of pipes, organized systematically for easy identification and quick dispatch. Our storage facilities can handle large export volumes efficiently.
             </p>
             <div className="grid grid-cols-2 gap-4">
@@ -148,7 +148,7 @@ export default function Facilities() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl group">
               <img
-                src={facilitiesImage2}
+                src={outdoorStorageImage}
                 alt="Outdoor Pipe Storage"
                 className="w-full h-[500px] object-cover group-hover:opacity-90 transition-opacity duration-300"
                 style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}

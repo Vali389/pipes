@@ -2,19 +2,19 @@ import { motion } from 'framer-motion'
 
 export default function Manufacturing() {
   return (
-    <section id="manufacturing" className="py-20 bg-white">
+    <section id="manufacturing" className="py-14 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
-          <h2 className="font-opensans text-[28px] lg:text-[38px] font-extrabold text-[#40E0D0] leading-[1.2] mb-6">
+          <h2 className="font-opensans text-[28px] lg:text-[38px] font-extrabold text-[#40E0D0] leading-[1.2] mb-4">
             Manufacturing & Sourcing Approach
           </h2>
-          <p className="font-inter text-[25px] text-[#333333] leading-[1.9] mx-auto mb-12">
+          <p className="font-inter text-[25px] text-[#333333] leading-[1.9] mx-auto mb-8">
             All products are manufactured at partner facilities equipped with modern extrusion lines and testing infrastructure. We conduct thorough verification, continuous production monitoring, and pre-dispatch quality checks to ensure consistent quality and reliable supply for export markets.
           </p>
         </motion.div>
@@ -59,7 +59,7 @@ export default function Manufacturing() {
               whileHover={{ y: -2 }}
               style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
             >
-              <div className="w-16 h-16 bg-[#40E0D0] rounded-xl flex items-center justify-center text-white mb-6 group-hover:bg-[#F57C00] transition-colors">
+              <div className="w-16 h-16 bg-[#40E0D0] rounded-xl flex items-center justify-center text-white mb-4 group-hover:bg-[#F57C00] transition-colors">
                 {item.icon}
               </div>
               <h3 className="font-opensans text-[22px] font-bold text-[#40E0D0] mb-4">
@@ -77,7 +77,7 @@ export default function Manufacturing() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mt-12 bg-[#F8F9FA] rounded-lg p-6 border-l-4 border-[#40E0D0] mx-auto"
+          className="mt-8 bg-[#F8F9FA] rounded-lg p-6 border-l-4 border-[#40E0D0] mx-auto"
         >
           <p className="font-inter text-[17px] text-[#333333] leading-relaxed">
             <strong className="text-[#40E0D0]">Note:</strong> This sourcing model enables us to handle large export volumes without compromising quality. Manufacturing visuals shown on this website represent partner facilities.

@@ -5,6 +5,7 @@ import heroBg from '../assets/hero page background image.jpeg'
 import founderImage from '../assets/_founder.jpeg'
 import Facilities from '../components/Facilities'
 import Certifications from '../components/Certifications'
+import Standards from '../components/Standards'
 
 export default function About() {
   return (
@@ -31,13 +32,13 @@ export default function About() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-block mb-6"
+              className="inline-block mb-4"
             >
               <span className="px-6 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-sm font-bold uppercase tracking-wider">
                 Who We Are
               </span>
             </motion.div>
-            <h1 className="font-opensans text-[48px] md:text-[56px] lg:text-[64px] font-extrabold mb-6 drop-shadow-2xl">
+            <h1 className="font-opensans text-[48px] md:text-[56px] lg:text-[64px] font-extrabold mb-4 drop-shadow-2xl">
               About <span className="text-[#40E0D0]">Us</span>
             </h1>
             <p className="font-inter text-[20px] md:text-[22px] text-white mx-auto max-w-3xl leading-relaxed drop-shadow-lg" style={{ opacity: 1, color: '#ffffff' }}>
@@ -48,7 +49,7 @@ export default function About() {
       </section>
 
       {/* About Us Section */}
-      <section className="py-24 bg-gradient-to-b from-white to-[#F8F9FA]">
+      <section className="py-16 bg-gradient-to-b from-white to-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -59,11 +60,11 @@ export default function About() {
           >
             {/* Text Content */}
             <div>
-              <h2 className="font-opensans text-[40px] md:text-[48px] font-extrabold text-[#40E0D0] mb-6">
+              <h2 className="font-opensans text-[40px] md:text-[48px] font-extrabold text-[#40E0D0] mb-4">
                 About Us
               </h2>
-              <div className="w-32 h-1.5 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] mb-8 rounded-full"></div>
-              <p className="font-inter text-[18px] md:text-[20px] text-[#333333] leading-relaxed mb-6">
+              <div className="w-32 h-1.5 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] mb-4 rounded-full"></div>
+              <p className="font-inter text-[18px] md:text-[20px] text-[#333333] leading-relaxed mb-4">
                 Blue Wave Global is a India-based export trading company specializing in high-quality PVC and HDPE piping solutions for global infrastructure, irrigation, and industrial applications. Based in Hyderabad, India, we combine India's strong manufacturing capabilities with international export expertise to deliver reliable and cost-effective piping products to global markets.
               </p>
               <p className="font-inter text-[18px] md:text-[20px] text-[#333333] leading-relaxed">
@@ -92,43 +93,111 @@ export default function About() {
         </div>
       </section>
 
-      {/* Our Global Reach & Quality & Compliance Section */}
-      <section className="py-24 bg-gradient-to-b from-white to-[#F8F9FA]">
+      {/* Mission & Vision Section - Right after About Us */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-10">
-            {/* Our Global Reach Card */}
           <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-              className="bg-gradient-to-br from-white to-[#F8F9FA] rounded-3xl p-10 md:p-12 border-2 border-[#40E0D0]/20 shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
+            className="grid lg:grid-cols-2 gap-10"
           >
-              {/* Decorative Background Elements */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#40E0D0]/5 rounded-full blur-3xl -mr-32 -mt-32 group-hover:bg-[#40E0D0]/10 transition-all duration-500"></div>
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#7FFFD4]/5 rounded-full blur-2xl -ml-24 -mb-24 group-hover:bg-[#7FFFD4]/10 transition-all duration-500"></div>
-              
+            {/* Mission */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="bg-gradient-to-br from-[#F8F9FA] to-white rounded-3xl p-10 border-2 border-[#40E0D0]/20 shadow-xl hover:shadow-2xl transition-all relative overflow-hidden group"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#40E0D0]/5 rounded-full blur-2xl -mr-16 -mt-16"></div>
               <div className="relative z-10">
-                {/* Header with Icon */}
-                <div className="flex flex-col md:flex-row md:items-center gap-6 mb-8">
-                  <div className="w-20 h-20 bg-gradient-to-br from-[#40E0D0] to-[#7FFFD4] rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <FaGlobe className="w-10 h-10 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-[#40E0D0] to-[#7FFFD4] rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+                  <FaHandshake className="w-8 h-8 text-white" />
+                </div>
+                <h2 className="font-opensans text-[32px] lg:text-[36px] font-extrabold text-[#40E0D0] mb-4">
+                  Our Mission
+                </h2>
+                <p className="font-inter text-[18px] md:text-[20px] text-[#333333] leading-relaxed">
+                  Our goal is to partner with contractors, utilities, and infrastructure developers globally by offering
+                  project-ready PVC and HDPE pipe solutions, competitive pricing, and reliable logistics support. 
+                  We strive to deliver excellence in every transaction and build lasting relationships with our clients.
+                </p>
               </div>
-                  <div>
-                    <h2 className="font-opensans text-[32px] md:text-[36px] font-extrabold text-[#40E0D0] mb-2">
-                Our Global Reach
-              </h2>
-                    <div className="w-32 h-1.5 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] rounded-full"></div>
-                  </div>
-            </div>
+            </motion.div>
 
-                {/* Content */}
-            <p className="font-inter text-[18px] md:text-[20px] text-[#333333] leading-relaxed">
-                  We currently supply piping solutions to growing infrastructure and water management projects in India and across the world, supporting sustainable development and reliable water distribution systems. Our strong export logistics and documentation expertise enable smooth and timely international deliveries.
-            </p>
+            {/* Vision */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="bg-gradient-to-br from-[#F8F9FA] to-white rounded-3xl p-10 border-2 border-[#7FFFD4]/20 shadow-xl hover:shadow-2xl transition-all relative overflow-hidden group"
+            >
+              <div className="absolute top-0 left-0 w-32 h-32 bg-[#7FFFD4]/5 rounded-full blur-2xl -ml-16 -mt-16"></div>
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#7FFFD4] to-[#40E0D0] rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+                  <FaGlobe className="w-8 h-8 text-white" />
+                </div>
+                <h2 className="font-opensans text-[32px] lg:text-[36px] font-extrabold text-[#40E0D0] mb-4">
+                  Our Vision
+                </h2>
+                <p className="font-inter text-[18px] md:text-[20px] text-[#333333] leading-relaxed">
+                  To become a globally trusted export partner delivering world-class piping solutions from India.
+                </p>
               </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Manufacturing Process Section - After Mission & Vision */}
+      <section className="py-16 bg-gradient-to-b from-[#F8F9FA] to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-10"
+          >
+            <h2 className="font-opensans text-[40px] md:text-[48px] font-extrabold text-[#40E0D0] mb-4">
+              Our Manufacturing Process
+            </h2>
+            <div className="w-32 h-1.5 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] mx-auto mb-4 rounded-full"></div>
+            <p className="font-inter text-[18px] md:text-[20px] text-[#333333] leading-relaxed ">
+              Discover our advanced manufacturing processes and commitment to delivering world-class piping solutions
+            </p>
           </motion.div>
 
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="max-w-5xl mx-auto"
+          >
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-[#40E0D0]/20 bg-gradient-to-br from-[#40E0D0]/10 to-[#7FFFD4]/10 p-2">
+              <div className="relative aspect-video bg-black rounded-2xl overflow-hidden">
+                <iframe
+                  src="https://drive.google.com/file/d/1egaQ6Xo-8vFF-zIzD3Fklr8kvd3jVcPl/preview"
+                  className="w-full h-full"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  title="Blue Wave Global Manufacturing Process"
+                ></iframe>
+              </div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] rounded-3xl opacity-20 blur-xl -z-10"></div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Quality & Compliance Section */}
+      <section className="py-16 bg-gradient-to-b from-white to-[#F8F9FA]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
             {/* Quality & Compliance Card */}
           <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -143,7 +212,7 @@ export default function About() {
               
               <div className="relative z-10">
                 {/* Header with Icon */}
-                <div className="flex flex-col md:flex-row md:items-center gap-6 mb-8">
+                <div className="flex flex-col md:flex-row md:items-center gap-6 mb-4">
                   <div className="w-20 h-20 bg-gradient-to-br from-[#7FFFD4] to-[#40E0D0] rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <FaShieldAlt className="w-10 h-10 text-white" />
               </div>
@@ -156,7 +225,7 @@ export default function About() {
             </div>
 
                 {/* Content */}
-                <p className="font-inter text-[18px] md:text-[20px] text-[#333333] leading-relaxed mb-6">
+                <p className="font-inter text-[18px] md:text-[20px] text-[#333333] leading-relaxed mb-4">
               Blue Wave Global operates with strict quality control practices and holds a valid Import Export Code (IEC) issued by the Government of India. Every product we supply is carefully inspected to ensure durability, performance, and compliance with global industry requirements.
             </p>
 
@@ -208,79 +277,23 @@ export default function About() {
         </div>
       </section>
 
-      {/* Mission & Vision Section - Enhanced */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="grid lg:grid-cols-2 gap-10"
-          >
-            {/* Mission */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="bg-gradient-to-br from-[#F8F9FA] to-white rounded-3xl p-10 border-2 border-[#40E0D0]/20 shadow-xl hover:shadow-2xl transition-all relative overflow-hidden group"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#40E0D0]/5 rounded-full blur-2xl -mr-16 -mt-16"></div>
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#40E0D0] to-[#7FFFD4] rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-                  <FaHandshake className="w-8 h-8 text-white" />
-                </div>
-                <h2 className="font-opensans text-[32px] lg:text-[36px] font-extrabold text-[#40E0D0] mb-6">
-                  Our Mission
-                </h2>
-                <p className="font-inter text-[18px] md:text-[20px] text-[#333333] leading-relaxed">
-                  Our goal is to partner with contractors, utilities, and infrastructure developers globally by offering
-                  project-ready PVC and HDPE pipe solutions, competitive pricing, and reliable logistics support. 
-                  We strive to deliver excellence in every transaction and build lasting relationships with our clients.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Vision */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="bg-gradient-to-br from-[#F8F9FA] to-white rounded-3xl p-10 border-2 border-[#7FFFD4]/20 shadow-xl hover:shadow-2xl transition-all relative overflow-hidden group"
-            >
-              <div className="absolute top-0 left-0 w-32 h-32 bg-[#7FFFD4]/5 rounded-full blur-2xl -ml-16 -mt-16"></div>
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#7FFFD4] to-[#40E0D0] rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-                  <FaGlobe className="w-8 h-8 text-white" />
-                </div>
-                <h2 className="font-opensans text-[32px] lg:text-[36px] font-extrabold text-[#40E0D0] mb-6">
-                  Our Vision
-                </h2>
-                <p className="font-inter text-[18px] md:text-[20px] text-[#333333] leading-relaxed">
-                  To become a globally trusted export partner delivering world-class piping solutions from India.
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+      {/* Standards & Compliance */}
+      <Standards />
 
       {/* Core Values Section */}
-      <section className="py-24 bg-gradient-to-b from-[#F8F9FA] to-white">
+      <section className="py-16 bg-gradient-to-b from-[#F8F9FA] to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
-            <h2 className="font-opensans text-[40px] md:text-[48px] font-extrabold text-[#40E0D0] mb-6">
+            <h2 className="font-opensans text-[40px] md:text-[48px] font-extrabold text-[#40E0D0] mb-4">
               Our Core Values
             </h2>
-            <div className="w-32 h-1.5 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] mx-auto mb-8 rounded-full"></div>
+            <div className="w-32 h-1.5 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] mx-auto mb-4 rounded-full"></div>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -324,7 +337,7 @@ export default function About() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-white rounded-2xl p-8 border-2 border-gray-100 shadow-lg hover:shadow-2xl hover:border-[#40E0D0]/30 transition-all group"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-[#40E0D0] to-[#7FFFD4] rounded-xl flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#40E0D0] to-[#7FFFD4] rounded-xl flex items-center justify-center mb-4 text-white group-hover:scale-110 transition-transform shadow-lg">
                   {value.icon}
                 </div>
                 <h3 className="font-opensans text-[24px] font-extrabold text-[#40E0D0] mb-4">
@@ -340,19 +353,19 @@ export default function About() {
       </section>
 
       {/* Why Choose Blue Wave Global Section */}
-      <section className="py-24 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
-            <h2 className="font-opensans text-[40px] md:text-[48px] font-extrabold text-[#40E0D0] mb-6">
+            <h2 className="font-opensans text-[40px] md:text-[48px] font-extrabold text-[#40E0D0] mb-4">
               Why Choose Blue Wave Global
             </h2>
-            <div className="w-32 h-1.5 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] mx-auto mb-8 rounded-full"></div>
+            <div className="w-32 h-1.5 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] mx-auto mb-4 rounded-full"></div>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -387,51 +400,8 @@ export default function About() {
       {/* Quality & Certifications Section */}
       <Certifications />
 
-      {/* Manufacturing Process Section */}
-      <section className="py-24 bg-gradient-to-b from-[#F8F9FA] to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-opensans text-[40px] md:text-[48px] font-extrabold text-[#40E0D0] mb-6">
-              Our Manufacturing Process
-            </h2>
-            <div className="w-32 h-1.5 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] mx-auto mb-8 rounded-full"></div>
-            <p className="font-inter text-[18px] md:text-[20px] text-[#333333] leading-relaxed ">
-              Discover our advanced manufacturing processes and commitment to delivering world-class piping solutions
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-5xl mx-auto"
-          >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-[#40E0D0]/20 bg-gradient-to-br from-[#40E0D0]/10 to-[#7FFFD4]/10 p-2">
-              <div className="relative aspect-video bg-black rounded-2xl overflow-hidden">
-                <iframe
-                  src="https://drive.google.com/file/d/1egaQ6Xo-8vFF-zIzD3Fklr8kvd3jVcPl/preview"
-                  className="w-full h-full"
-                  allow="autoplay; encrypted-media"
-                  allowFullScreen
-                  title="Blue Wave Global Manufacturing Process"
-                ></iframe>
-              </div>
-              {/* Decorative gradient overlay */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] rounded-3xl opacity-20 blur-xl -z-10"></div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* CTA Section - Beautiful Gradient Style */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-16 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -446,20 +416,20 @@ export default function About() {
             
             <div className="relative z-10">
             {/* Main Heading */}
-              <h2 className="font-opensans text-[42px] md:text-[52px] lg:text-[60px] font-extrabold text-white mb-6 text-center">
+              <h2 className="font-opensans text-[42px] md:text-[52px] lg:text-[60px] font-extrabold text-white mb-4 text-center">
               Ready to Work Together?
             </h2>
             
             {/* Description */}
-              <p className="font-inter text-[18px] md:text-[20px] text-white/95 text-center  leading-relaxed mb-19  font-medium">
+              <p className="font-inter text-[18px] md:text-[20px] text-white/95 text-center  leading-relaxed mb-8  font-medium">
               Let's discuss how we can support your next project with our premium piping solutions. Our expert team is ready to help you find the perfect solution for your infrastructure needs.
             </p>
             
               {/* CTA Cards - Beautiful Frosted Glass Style */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-4">
               {[
-                  { icon: "💬", title: "WhatsApp Us", desc: "Chat with us", action: "https://wa.me/918125700615" },
-                { icon: "📞", title: "Call Us", desc: "Direct communication", action: "tel:+918125700615" },
+                  { icon: "💬", title: "WhatsApp Us", desc: "Chat with us", action: "https://wa.me/917416057510" },
+                { icon: "📞", title: "Call Us", desc: "Direct communication", action: "tel:+917416057510" },
                   { icon: "✉️", title: "Email Us", desc: "Send us a message", action: "mailto:info@bwpipes.com" }
               ].map((item, index) => (
                 <motion.a

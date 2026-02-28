@@ -19,7 +19,7 @@ export default function Markets() {
   ]
 
   return (
-    <section id="markets" className="py-20 bg-white relative overflow-hidden">
+    <section id="markets" className="py-14 bg-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -35,24 +35,24 @@ export default function Markets() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-8"
         >
           <div className="inline-block mb-4">
             <span className="inline-block px-4 py-2 bg-[#F57C00] text-white text-sm font-bold uppercase tracking-wide rounded-lg">
               Global Presence
             </span>
           </div>
-          <h2 className="font-opensans text-[32px] lg:text-[42px] font-extrabold text-[#40E0D0] leading-[1.2] mb-6">
+          <h2 className="font-opensans text-[32px] lg:text-[42px] font-extrabold text-[#40E0D0] leading-[1.2] mb-4">
             Markets We Serve
           </h2>
-          <div className="w-32 h-1.5 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] mx-auto mb-6"></div>
+          <div className="w-32 h-1.5 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] mx-auto mb-4"></div>
           <p className="font-inter text-[25px] text-[#333333]  mx-auto leading-relaxed">
             We actively export PVC and HDPE pipes to various international markets. Our export experience helps international buyers reduce sourcing risk and lead time.
           </p>
         </motion.div>
 
         {/* Markets Cards - Professional Design */}
-        <div className="grid md:grid-cols-2 gap-8 mb-20">
+        <div className="grid md:grid-cols-2 gap-8 mb-8">
           {markets.map((market, index) => (
             <motion.div
               key={market.region}
@@ -120,7 +120,7 @@ export default function Markets() {
                 </div>
 
                 {/* CTA */}
-                <div className="mt-8 pt-6 border-t border-gray-200">
+                <div className="mt-6 pt-6 border-t border-gray-200">
                   <motion.a
                     href="#contact"
                     className="inline-flex items-center gap-2 text-[#40E0D0] font-semibold text-[15px] hover:text-[#F57C00] transition-colors group/link"

@@ -6,7 +6,7 @@ const industries = [
   },
   {
     name: 'Plumbing & Construction',
-    description: 'UPVC, PVC and SWR pipe systems for residential, commercial and high-rise projects.',
+    description: 'PVC and SWR pipe systems for residential, commercial and high-rise projects.',
     icon: '🏗️',
   },
   {
@@ -33,7 +33,7 @@ const industries = [
 
 export default function Industries() {
   return (
-    <section id="industries" className="py-20 bg-white">
+    <section id="industries" className="py-14 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-14">

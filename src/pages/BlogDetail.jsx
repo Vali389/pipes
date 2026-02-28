@@ -78,9 +78,9 @@ const blogPosts = {
         id: 'comparison',
         title: 'Direct Comparison',
         content: `
-          <div class="mb-6">
+          <div class="mb-4">
             <h3 class="text-xl font-bold text-[#40E0D0] mb-4">Key Differences:</h3>
-            <table class="w-full border-collapse mb-6">
+            <table class="w-full border-collapse mb-4">
               <thead>
                 <tr class="bg-[#F8F9FA]">
                   <th class="border border-gray-300 p-3 text-left font-bold text-[#40E0D0]">Feature</th>
@@ -129,7 +129,7 @@ const blogPosts = {
         title: 'Choosing the Right Material',
         content: `
           <p class="mb-4">The choice between PVC and HDPE depends on your specific project requirements, budget, and environmental conditions:</p>
-          <div class="space-y-4 mb-6">
+          <div class="space-y-4 mb-4">
             <div class="bg-[#F8F9FA] p-4 rounded-lg border-l-4 border-[#40E0D0]">
               <h4 class="font-bold text-[#40E0D0] mb-2">For Water Supply Systems:</h4>
               <p>Both work well, but HDPE offers better flexibility for areas with ground movement. PVC is more cost-effective for stable ground conditions.</p>
@@ -156,7 +156,7 @@ const blogPosts = {
             </div>
           </div>
           <p class="mb-4"><strong>Consider These Factors:</strong></p>
-          <ul class="list-disc list-inside space-y-2 mb-6">
+          <ul class="list-disc list-inside space-y-2 mb-4">
             <li>Soil conditions and ground stability</li>
             <li>Temperature variations in your region</li>
             <li>Chemical exposure and corrosion risks</li>
@@ -176,7 +176,7 @@ const blogPosts = {
         content: `
           <p class="mb-4">Both PVC and HDPE pipes offer excellent performance characteristics, and the choice depends on your specific project requirements. PVC provides cost-effective solutions for standard applications, while HDPE excels in demanding conditions requiring flexibility and durability.</p>
           <p class="mb-4">Key takeaways:</p>
-          <ul class="list-disc list-inside space-y-2 mb-6">
+          <ul class="list-disc list-inside space-y-2 mb-4">
             <li>PVC is ideal for budget-conscious projects with stable ground conditions</li>
             <li>HDPE is superior for applications requiring flexibility and impact resistance</li>
             <li>Both materials offer long service life when properly installed</li>
@@ -354,7 +354,7 @@ const blogPosts = {
         content: `
           <p class="mb-4">Choosing a reliable PVC pipe exporter requires careful evaluation of multiple factors. Focus on quality, certifications, manufacturing capabilities, export experience, and communication.</p>
           <p class="mb-4">At BWPipes, we meet all these criteria and more:</p>
-          <ul class="list-disc list-inside space-y-2 mb-6">
+          <ul class="list-disc list-inside space-y-2 mb-4">
             <li>ISO certified products with comprehensive documentation</li>
             <li>Verified manufacturing partner network</li>
             <li>Extensive export experience across multiple markets</li>
@@ -388,7 +388,7 @@ const blogPosts = {
         title: 'African Market Standards',
         content: `
           <p class="mb-4">African markets follow various standards depending on the country and region:</p>
-          <div class="space-y-4 mb-6">
+          <div class="space-y-4 mb-4">
             <div class="bg-[#F8F9FA] p-4 rounded-lg border-l-4 border-[#40E0D0]">
               <h4 class="font-bold text-[#40E0D0] mb-2">ISO Standards</h4>
               <p>Widely accepted across the continent. ISO 4427 for water supply pipes and ISO 1452 for pressure pipes are commonly referenced.</p>
@@ -428,7 +428,7 @@ const blogPosts = {
         title: 'Middle Eastern Market Standards',
         content: `
           <p class="mb-4">Middle Eastern markets typically require:</p>
-          <div class="space-y-4 mb-6">
+          <div class="space-y-4 mb-4">
             <div class="bg-[#F8F9FA] p-4 rounded-lg border-l-4 border-[#40E0D0]">
               <h4 class="font-bold text-[#40E0D0] mb-2">ASTM Standards</h4>
               <p>Commonly used in UAE and Saudi Arabia. ASTM D1785 for pressure-rated pipes and ASTM D2241 for pressure-rated pipe compounds.</p>
@@ -529,7 +529,7 @@ const blogPosts = {
         content: `
           <p class="mb-4">Understanding and complying with standards in African and Middle Eastern markets is crucial for successful export operations. Each market has specific requirements that must be met.</p>
           <p class="mb-4">BWPipes ensures all products meet the required standards for African and Middle Eastern markets:</p>
-          <ul class="list-disc list-inside space-y-2 mb-6">
+          <ul class="list-disc list-inside space-y-2 mb-4">
             <li>Products manufactured to ISO, ASTM, and regional standards</li>
             <li>Comprehensive compliance documentation</li>
             <li>Experience exporting to multiple African and Middle Eastern countries</li>
@@ -672,7 +672,7 @@ export default function BlogDetail() {
                 <h3 className="font-opensans text-[24px] font-bold text-[#40E0D0] mb-4">
                   Need PVC or HDPE Pipes?
                 </h3>
-                <p className="font-inter text-[17px] text-[#333333] mb-6">
+                <p className="font-inter text-[17px] text-[#333333] mb-4">
                   Contact us today to discuss your requirements and get a quote.
                 </p>
                 <Link

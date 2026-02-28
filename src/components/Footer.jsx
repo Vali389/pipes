@@ -10,12 +10,13 @@ const footerLinks = {
     { name: 'Contact Us', href: '/contact' },
   ],
   products: [
-    { name: 'PVC Pipes', href: '/products' },
-    { name: 'HDPE Pipes', href: '/products' },
-    { name: 'uPVC Pipes', href: '/products' },
-    { name: 'Drainage Pipes', href: '/products' },
-    { name: 'High Pressure Pipes', href: '/products' },
-    { name: 'Electric Conduit Pipes', href: '/products' },
+    { name: 'PVC Rigid Pipes', href: '/pvc-pipes' },
+    { name: 'Blue Casing Pipes', href: '/pvc-pipes' },
+    { name: 'SWR Pipes & Fittings', href: '/pvc-pipes' },
+    { name: 'UGD Pipes', href: '/pvc-pipes' },
+    { name: 'Electric Conduit Pipes', href: '/pvc-pipes' },
+    { name: 'HDPE Pipes', href: '/hdpe-pipes' },
+    { name: 'Drip Pipes', href: '/hdpe-pipes' },
   ],
 }
 
@@ -36,7 +37,7 @@ export default function Footer() {
           {/* Logo & Contact Section */}
           <div>
             {/* Logo */}
-            <div className="mb-6">
+            <div className="mb-4">
               <img
                 src={logoImage}
                 alt="BWPipes Logo - Blue Wave Pipes"
@@ -47,7 +48,7 @@ export default function Footer() {
             </div>
             
             {/* Description */}
-            <p className="text-[#696969] font-inter mb-6" style={{ fontSize: '20px', lineHeight: '1.6' }}>
+            <p className="text-[#696969] font-inter mb-4" style={{ fontSize: '20px', lineHeight: '1.6' }}>
               Trusted PVC & HDPE pipe exporter supplying international markets through verified manufacturing partners. Bulk supply, export packaging & quality assurance.
             </p>
             

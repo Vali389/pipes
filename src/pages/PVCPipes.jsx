@@ -61,8 +61,8 @@ export default function PVCPipes() {
                         transition={{ duration: 0.8 }}
                         className="max-w-4xl"
                     >
-                        <h1 className="text-[48px] md:text-[64px] lg:text-[72px] font-extrabold text-white font-opensans leading-tight mb-8 drop-shadow-xl">
-                            UPVC, PVC & SWR Pipe Systems
+                        <h1 className="text-[48px] md:text-[64px] lg:text-[72px] font-extrabold text-white font-opensans leading-tight mb-4 drop-shadow-xl">
+                            PVC & SWR Pipe Systems
                         </h1>
                         <p className="text-[20px] md:text-[24px] text-white leading-relaxed max-w-2xl font-medium drop-shadow-lg mb-10" style={{ opacity: 1, color: '#ffffff' }}>
                             Comprehensive piping solutions for agriculture, plumbing, and infrastructure. Engineered for durability, safety, and long-term efficiency.
@@ -77,7 +77,7 @@ export default function PVCPipes() {
             </div>
 
             {/* --- INTRO SECTION --- */}
-            <div className="py-24 bg-gradient-to-b from-white to-[#F8F9FA]">
+            <div className="py-16 bg-gradient-to-b from-white to-[#F8F9FA]">
                 <div className="container px-6 lg:px-12">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -86,19 +86,19 @@ export default function PVCPipes() {
                         transition={{ duration: 0.8 }}
                         className="text-center"
                     >
-                        <h2 className="text-[36px] md:text-[44px] font-extrabold text-[#40E0D0] mb-8 font-opensans leading-tight">
-                            UPVC, PVC & SWR Pipe Systems for Agriculture, Plumbing & Infrastructure
+                        <h2 className="text-[36px] md:text-[44px] font-extrabold text-[#40E0D0] mb-4 font-opensans leading-tight">
+                            PVC & SWR Pipe Systems for Agriculture, Plumbing & Infrastructure
                         </h2>
                         <div className="w-40 h-2 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] mx-auto mb-10 rounded-full"></div>
                         <p className="font-inter text-[18px] md:text-[20px] text-[#333333]  leading-relaxed">
-                            We offer a comprehensive range of UPVC rigid pipes, UPVC plumbing pipes, PVC braided hose pipes, SWR drainage systems, and PVC electrical conduit pipes, engineered for agriculture, water supply, plumbing, electrical, industrial, and infrastructure applications. Manufactured under strict quality control, these piping solutions deliver durability, safety, and long-term cost efficiency.
+                            We offer a comprehensive range of PVC rigid pipes, PVC plumbing pipes, PVC braided hose pipes, SWR drainage systems, and PVC electrical conduit pipes, engineered for agriculture, water supply, plumbing, electrical, industrial, and infrastructure applications. Manufactured under strict quality control, these piping solutions deliver durability, safety, and long-term cost efficiency.
                         </p>
                     </motion.div>
                 </div>
             </div>
 
-            {/* --- SECTION 1: UPVC RIGID PIPES --- */}
-            <div className="py-24 bg-gradient-to-b from-white to-[#F8F9FA]">
+            {/* --- SECTION 1: PVC RIGID PIPES --- */}
+            <div className="py-16 bg-gradient-to-b from-white to-[#F8F9FA]">
                 <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
                     <div className="grid lg:grid-cols-2 gap-16 items-start">
                         <motion.div
@@ -108,9 +108,9 @@ export default function PVCPipes() {
                             transition={{ duration: 0.8 }}
                             className="order-2 lg:order-1"
                         >
-                            <SectionHeading subtitle>UPVC Rigid Pipes for Agriculture & Water Supply</SectionHeading>
-                            <p className="text-[18px] text-[#333333] mb-8 leading-relaxed font-inter">
-                                UPVC Rigid Pipes form the backbone of agricultural and water distribution infrastructure. Manufactured as per <strong className="text-[#40E0D0] font-semibold">IS 4985:2000</strong>, these pipes are designed for consistent performance in irrigation and potable water supply systems, where reliability directly impacts agricultural productivity and livelihoods.
+                            <SectionHeading subtitle>PVC Rigid Pipes for Agriculture & Water Supply</SectionHeading>
+                            <p className="text-[18px] text-[#333333] mb-4 leading-relaxed font-inter">
+                                PVC Rigid Pipes form the backbone of agricultural and water distribution infrastructure. Manufactured as per <strong className="text-[#40E0D0] font-semibold">IS 4985:2000</strong>, these pipes are designed for consistent performance in irrigation and potable water supply systems, where reliability directly impacts agricultural productivity and livelihoods.
                             </p>
 
                             <div className="space-y-6">
@@ -137,7 +137,7 @@ export default function PVCPipes() {
                                                 </tr>
                                                 <tr>
                                                     <th className="p-4 font-bold text-[#40E0D0] font-opensans">Material</th>
-                                                    <td className="p-4 text-[#333333] font-inter">Unplasticized Polyvinyl Chloride (UPVC)</td>
+                                                    <td className="p-4 text-[#333333] font-inter">Polyvinyl Chloride (PVC)</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -173,15 +173,15 @@ export default function PVCPipes() {
                             className="order-1 lg:order-2 sticky top-24 self-start"
                         >
                             <div className="w-full">
-                                <img src={highPressureImage} alt="UPVC Rigid Pipes" className="w-full h-auto object-cover rounded-2xl shadow-2xl border-4 border-[#40E0D0]/30" />
+                                <img src={highPressureImage} alt="PVC Rigid Pipes" className="w-full h-auto object-cover rounded-2xl shadow-2xl border-4 border-[#40E0D0]/30" />
                             </div>
                         </motion.div>
                     </div>
                 </div>
             </div>
 
-            {/* --- SECTION 2: UPVC PLUMBING --- */}
-            <div className="py-24 bg-white">
+            {/* --- SECTION 2: PVC PLUMBING --- */}
+            <div className="py-16 bg-white">
                 <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
                     <div className="grid lg:grid-cols-2 gap-16 items-start">
                         <motion.div
@@ -192,7 +192,7 @@ export default function PVCPipes() {
                             className="order-1 lg:order-1 sticky top-24 self-start"
                         >
                             <div className="w-full">
-                                <img src={whitePipesImage} alt="UPVC Plumbing Pipes" className="w-full h-auto object-cover rounded-2xl shadow-2xl border-4 border-[#7FFFD4]/30" />
+                                <img src={whitePipesImage} alt="PVC Plumbing Pipes" className="w-full h-auto object-cover rounded-2xl shadow-2xl border-4 border-[#7FFFD4]/30" />
                             </div>
                         </motion.div>
                         <motion.div
@@ -202,9 +202,9 @@ export default function PVCPipes() {
                             transition={{ duration: 0.8 }}
                             className="order-2 lg:order-2"
                         >
-                            <SectionHeading subtitle>UPVC Plumbing Pipes & Fittings</SectionHeading>
-                            <p className="text-[18px] text-[#333333] mb-8 leading-relaxed font-inter">
-                                UPVC Plumbing Pipes are suitable for residential, commercial, and gardening applications, offering excellent compatibility with conventional plumbing systems.
+                            <SectionHeading subtitle>PVC Plumbing Pipes & Fittings</SectionHeading>
+                            <p className="text-[18px] text-[#333333] mb-4 leading-relaxed font-inter">
+                                PVC Plumbing Pipes are suitable for residential, commercial, and gardening applications, offering excellent compatibility with conventional plumbing systems.
                             </p>
                             <div className="space-y-8">
                                 <div>
@@ -232,13 +232,13 @@ export default function PVCPipes() {
             </div>
 
             {/* --- SECTION 3: BRAIDED HOSE --- */}
-            <div className="py-24 container  px-6 lg:px-12">
+            <div className="py-16 container  px-6 lg:px-12">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="text-center  mb-16"
+                    className="text-center  mb-10"
                 >
                     <SectionHeading>PVC Braided Hose Pipes</SectionHeading>
                     <p className="font-inter text-[18px] md:text-[20px] text-[#333333] mx-auto leading-relaxed">
@@ -246,9 +246,9 @@ export default function PVCPipes() {
                     </p>
                 </motion.div>
 
-                <div className="mb-12">
-                    <h4 className="font-bold text-[#40E0D0] mb-6 text-[20px] uppercase tracking-wide font-opensans text-center">Key Advantages</h4>
-                    <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
+                <div className="mb-4">
+                    <h4 className="font-bold text-[#40E0D0] mb-4 text-[20px] uppercase tracking-wide font-opensans text-center">Key Advantages</h4>
+                    <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-4">
                         <CheckList items={[
                             "High working pressure resistance",
                             "Burst-resistant design",
@@ -262,7 +262,7 @@ export default function PVCPipes() {
                 </div>
 
                 <div>
-                    <h4 className="font-bold text-[#40E0D0] mb-8 text-[20px] uppercase tracking-wide font-opensans text-center">Application Variants</h4>
+                    <h4 className="font-bold text-[#40E0D0] mb-4 text-[20px] uppercase tracking-wide font-opensans text-center">Application Variants</h4>
                     <div className="grid md:grid-cols-3 gap-6">
                         {[
                             { title: "Air / Pneumatic Pipes", desc: "Compressed air, gases & chemicals" },
@@ -289,14 +289,14 @@ export default function PVCPipes() {
             </div>
 
             {/* --- SECTION 4: SWR & CONDUIT --- */}
-            <div className="py-24 bg-gradient-to-b from-white to-[#F8F9FA]">
+            <div className="py-16 bg-gradient-to-b from-white to-[#F8F9FA]">
                 <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
+                        className="text-center mb-10"
                     >
                         <SectionHeading>SWR Pipes & Electrical Conduit Systems</SectionHeading>
                     </motion.div>
@@ -308,15 +308,15 @@ export default function PVCPipes() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
                         >
-                            <div className="mb-6">
+                            <div className="mb-4">
                                 <div className="w-16 h-1.5 bg-gradient-to-r from-[#40E0D0] to-[#7FFFD4] rounded-full mb-4"></div>
                                 <h3 className="text-[32px] md:text-[36px] font-extrabold font-opensans text-[#40E0D0] mb-4 leading-tight">SWR Pipes & Drainage Systems</h3>
                             </div>
-                            <p className="text-[18px] text-[#333333] mb-8 leading-relaxed font-inter">
+                            <p className="text-[18px] text-[#333333] mb-4 leading-relaxed font-inter">
                                 SWR (Soil, Waste & Rainwater) Pipes are engineered for leak-proof, hygienic, and efficient drainage systems in residential and commercial buildings.
                             </p>
                             
-                            <div className="mb-8">
+                            <div className="mb-4">
                                 <h4 className="font-bold text-[#40E0D0] mb-4 text-[18px] uppercase tracking-wide font-opensans">Product Features</h4>
                                 <CheckList items={[
                                     "High tensile and impact strength",
@@ -352,15 +352,15 @@ export default function PVCPipes() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                         >
-                            <div className="mb-6">
+                            <div className="mb-4">
                                 <div className="w-16 h-1.5 bg-gradient-to-r from-[#7FFFD4] to-[#40E0D0] rounded-full mb-4"></div>
                                 <h3 className="text-[32px] md:text-[36px] font-extrabold font-opensans text-[#7FFFD4] mb-4 leading-tight">PVC Electrical Conduit Pipes & Fittings</h3>
                             </div>
-                            <p className="text-[18px] text-[#333333] mb-8 leading-relaxed font-inter">
+                            <p className="text-[18px] text-[#333333] mb-4 leading-relaxed font-inter">
                                 PVC Electrical Conduit Pipes and Fittings are designed for modern architectural and electrical installations, preferred for residential, commercial, and industrial projects.
                             </p>
                             
-                            <div className="mb-8">
+                            <div className="mb-4">
                                 <h4 className="font-bold text-[#40E0D0] mb-4 text-[18px] uppercase tracking-wide font-opensans">Key Properties</h4>
                                 <CheckList items={[
                                     "Manufactured from high-impact unplasticized PVC",
@@ -386,21 +386,21 @@ export default function PVCPipes() {
             </div>
 
             {/* --- WHY CHOOSE US --- */}
-            <div className="py-24 bg-gradient-to-b from-white to-[#F8F9FA]">
+            <div className="py-16 bg-gradient-to-b from-white to-[#F8F9FA]">
                 <div className="container mx-auto px-6 lg:px-12">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
+                        className="text-center mb-10"
                     >
-                        <h2 className="text-[36px] md:text-[44px] font-extrabold text-[#40E0D0] mb-6 font-opensans leading-tight">
-                            Why Choose PVC & UPVC Pipe Systems?
+                        <h2 className="text-[36px] md:text-[44px] font-extrabold text-[#40E0D0] mb-4 font-opensans leading-tight">
+                            Why Choose PVC Pipe Systems?
                         </h2>
-                        <div className="w-40 h-2 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] mx-auto mb-8 rounded-full"></div>
+                        <div className="w-40 h-2 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] mx-auto mb-4 rounded-full"></div>
                         <p className="font-inter text-[18px] md:text-[20px] text-[#333333] mx-auto leading-relaxed">
-                            PVC and UPVC pipe systems offer durability, safety, corrosion resistance, and cost efficiency, making them ideal for agriculture, plumbing, drainage, electrical, and industrial infrastructure projects.
+                            PVC pipe systems offer durability, safety, corrosion resistance, and cost efficiency, making them ideal for agriculture, plumbing, drainage, electrical, and industrial infrastructure projects.
                         </p>
                     </motion.div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -418,7 +418,7 @@ export default function PVCPipes() {
                                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                                 className="p-8 bg-gradient-to-br from-white to-[#F8F9FA] rounded-2xl border-2 border-[#40E0D0]/20 hover:border-[#40E0D0] hover:shadow-xl transition-all group"
                             >
-                                <div className="w-16 h-16 bg-gradient-to-br from-[#40E0D0] to-[#7FFFD4] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <div className="w-16 h-16 bg-gradient-to-br from-[#40E0D0] to-[#7FFFD4] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
@@ -432,7 +432,7 @@ export default function PVCPipes() {
             </div>
 
             {/* --- CTA SECTION --- */}
-            <div className="py-20 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] relative overflow-hidden">
+            <div className="py-14 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/10"></div>
                 <div className="container mx-auto px-6 lg:px-12 text-center text-white relative z-10">
                     <motion.div
@@ -441,7 +441,7 @@ export default function PVCPipes() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h2 className="text-[36px] md:text-[44px] font-extrabold mb-6 font-opensans drop-shadow-lg">
+                        <h2 className="text-[36px] md:text-[44px] font-extrabold mb-4 font-opensans drop-shadow-lg">
                             Ready to Upgrade Your Infrastructure?
                         </h2>
                         <p className="font-inter text-[20px] md:text-[22px] text-white mx-auto leading-relaxed mb-10">

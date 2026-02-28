@@ -28,15 +28,9 @@ const packagingFeatures = [
   },
 ]
 
-const exportTerms = [
-  { term: 'FOB', desc: 'Free On Board' },
-  { term: 'CIF', desc: 'Cost, Insurance & Freight' },
-  { term: 'EXW', desc: 'Ex Works' },
-]
-
 export default function Packaging() {
   return (
-    <section id="export" className="py-20 bg-[#F8F9FA]">
+    <section id="export" className="py-14 bg-[#F8F9FA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -44,20 +38,20 @@ export default function Packaging() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-6"
         >
           <h2 className="font-opensans text-[28px] lg:text-[38px] font-extrabold text-[#40E0D0] leading-[1.2] mb-4">
             Export &amp; Logistics
           </h2>
-          <div className="w-24 h-1 bg-[#40E0D0] mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-[#40E0D0] mx-auto mb-4"></div>
           <p className="font-inter text-[20px] text-[#333333] ">
-            We manage the complete export process &mdash; from export packing and palletization to documentation and delivery &mdash;
+            We manage the complete export process &mdash; from documentation to delivery &mdash;
             ensuring seamless shipments for bulk and project orders.
           </p>
         </motion.div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-2 gap-10 mb-6">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -100,19 +94,8 @@ export default function Packaging() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <p className="font-inter text-[18px] text-[#333333] leading-relaxed mb-6">
-              We ensure proper export packing and palletization, container-friendly stacking, and safe handling for long-distance
-              transport so that pipes arrive project-ready at the destination port.
-            </p>
-            <ul className="list-disc list-inside space-y-2 font-inter text-[16px] text-[#333333] mb-6">
-              <li>Export packing &amp; palletization for 20 ft and 40 ft containers</li>
-              <li>Optimized container stuffing to maximize loadability</li>
-              <li>Clear size, specification and handling labels on each bundle</li>
-              <li>Support for HS code classification and packing lists</li>
-            </ul>
-
             {/* Packaging Features Grid */}
-            <div className="grid grid-cols-2 gap-4 mb-8">
+            <div className="grid grid-cols-2 gap-4 mb-6">
               {packagingFeatures.map((feature, index) => (
                 <motion.div
                   key={feature.title}
@@ -140,38 +123,6 @@ export default function Packaging() {
           </motion.div>
         </div>
 
-        {/* Export Terms & Documents */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="bg-gradient-to-r from-[#40E0D0] to-[#7FFFD4] rounded-2xl p-10 text-white"
-        >
-          <h3 className="font-opensans text-[28px] font-bold mb-2 text-center">
-            Export Terms Available
-          </h3>
-          <p className="font-inter text-[16px] text-white/90 text-center mb-8">
-            We support multiple Incoterms depending on buyer requirements and can coordinate port-to-port or door delivery.
-          </p>
-          <div className="grid md:grid-cols-3 gap-4">
-            {exportTerms.map((item, index) => (
-              <motion.div
-                key={item.term}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-all border border-white/20"
-                whileHover={{ y: -2 }}
-                style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
-              >
-                <div className="text-[#F57C00] text-[32px] font-extrabold font-opensans mb-2">{item.term}</div>
-                <div className="text-white text-sm font-inter">{item.desc}</div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   )

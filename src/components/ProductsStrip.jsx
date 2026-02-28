@@ -11,7 +11,7 @@ export default function ProductsStrip() {
           />
           <img 
             src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=200&auto=format&fit=crop&q=80" 
-            alt="UPVC Pipe" 
+            alt="PVC Pipe" 
             className="h-24 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
           />
           <img 

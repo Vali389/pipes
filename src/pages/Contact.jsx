@@ -1,49 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaPaperPlane } from 'react-icons/fa'
-
-// Helper function to get ISO code from country code
-const getCountryISO = (countryCode) => {
-  const codeToISO = {
-    '+1': 'US',
-    '+91': 'IN',
-    '+44': 'GB',
-    '+86': 'CN',
-    '+81': 'JP',
-    '+49': 'DE',
-    '+33': 'FR',
-    '+39': 'IT',
-    '+34': 'ES',
-    '+61': 'AU',
-    '+971': 'AE',
-    '+966': 'SA',
-    '+974': 'QA',
-    '+965': 'KW',
-    '+968': 'OM',
-    '+254': 'KE',
-    '+255': 'TZ',
-    '+256': 'UG',
-    '+234': 'NG',
-    '+233': 'GH',
-    '+27': 'ZA',
-    '+94': 'LK',
-    '+977': 'NP',
-    '+95': 'MM',
-    '+65': 'SG',
-    '+60': 'MY',
-    '+66': 'TH',
-    '+62': 'ID',
-    '+84': 'VN',
-    '+63': 'PH',
-    '+509': 'HT',
-    '+504': 'HN',
-    '+852': 'HK',
-    '+36': 'HU',
-    '+354': 'IS',
-    '+92': 'PK',
-  }
-  return codeToISO[countryCode] || 'US'
-}
+import { countryCodes, getCountryISO } from '../data/countryCodes'
 
 // Country Flag Component - Uses ISO code directly for reliable flag display
 const CountryFlag = ({ iso, className = '' }) => {
@@ -61,45 +19,6 @@ const CountryFlag = ({ iso, className = '' }) => {
     />
   )
 }
-
-const countryCodes = [
-  { code: '+1', country: 'United States/Canada', iso: 'US' },
-  { code: '+91', country: 'India', iso: 'IN' },
-  { code: '+44', country: 'United Kingdom', iso: 'GB' },
-  { code: '+86', country: 'China', iso: 'CN' },
-  { code: '+81', country: 'Japan', iso: 'JP' },
-  { code: '+49', country: 'Germany', iso: 'DE' },
-  { code: '+33', country: 'France', iso: 'FR' },
-  { code: '+39', country: 'Italy', iso: 'IT' },
-  { code: '+34', country: 'Spain', iso: 'ES' },
-  { code: '+61', country: 'Australia', iso: 'AU' },
-  { code: '+971', country: 'United Arab Emirates', iso: 'AE' },
-  { code: '+966', country: 'Saudi Arabia', iso: 'SA' },
-  { code: '+974', country: 'Qatar', iso: 'QA' },
-  { code: '+965', country: 'Kuwait', iso: 'KW' },
-  { code: '+968', country: 'Oman', iso: 'OM' },
-  { code: '+254', country: 'Kenya', iso: 'KE' },
-  { code: '+255', country: 'Tanzania', iso: 'TZ' },
-  { code: '+256', country: 'Uganda', iso: 'UG' },
-  { code: '+234', country: 'Nigeria', iso: 'NG' },
-  { code: '+233', country: 'Ghana', iso: 'GH' },
-  { code: '+27', country: 'South Africa', iso: 'ZA' },
-  { code: '+94', country: 'Sri Lanka', iso: 'LK' },
-  { code: '+977', country: 'Nepal', iso: 'NP' },
-  { code: '+95', country: 'Myanmar', iso: 'MM' },
-  { code: '+65', country: 'Singapore', iso: 'SG' },
-  { code: '+60', country: 'Malaysia', iso: 'MY' },
-  { code: '+66', country: 'Thailand', iso: 'TH' },
-  { code: '+62', country: 'Indonesia', iso: 'ID' },
-  { code: '+84', country: 'Vietnam', iso: 'VN' },
-  { code: '+63', country: 'Philippines', iso: 'PH' },
-  { code: '+509', country: 'Haiti', iso: 'HT' },
-  { code: '+504', country: 'Honduras', iso: 'HN' },
-  { code: '+852', country: 'Hong Kong', iso: 'HK' },
-  { code: '+36', country: 'Hungary', iso: 'HU' },
-  { code: '+354', country: 'Iceland', iso: 'IS' },
-  { code: '+92', country: 'Pakistan', iso: 'PK' },
-].sort((a, b) => a.country.localeCompare(b.country))
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -241,7 +160,7 @@ export default function Contact() {
     setCountryDropdownOpen(false)
   }
 
-  const selectedCountry = countryCodes.find(c => c.code === formData.countryCode) || countryCodes[1]
+  const selectedCountry = countryCodes.find(c => c.code === formData.countryCode) || countryCodes.find(c => c.code === '+91') || countryCodes[0]
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -293,15 +212,15 @@ export default function Contact() {
     const submissionData = {
       name: formData.name.trim(),
       email: formData.email.trim(),
+      companyName: formData.companyName.trim() || '',
       contactNumber: contactNumber,
       message: formData.message.trim(),
-      companyName: formData.companyName.trim() || '',
       timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
     }
 
     try {
       // Google Apps Script Web App URL
-      const scriptUrl = 'https://script.google.com/macros/s/AKfycbysbu6f4Ykb8KY4QVwLIZHGAqMik8rvY5WnxSHNsgEJ1jkYf7DU1qrd6kkRpjYWUHGThg/exec'
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbwnxRoYMQoaaX5kX2OZJN20XUKbz24y1rCnGYzRt0EHBnBcFjsyNpbbu1ft9d3wyw7vDg/exec'
 
       // Submit to Google Sheets
       if (scriptUrl && scriptUrl !== 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE') {
@@ -329,17 +248,17 @@ export default function Contact() {
       // Show success message and toast
       setIsSubmitting(false)
       setShowToast(true)
-      setSubmitted(true)
+    setSubmitted(true)
 
       // Reset form
-      setFormData({
-        name: '',
+    setFormData({
+      name: '',
         email: '',
         companyName: '',
         countryCode: '+91',
-        phone: '',
-        message: ''
-      })
+      phone: '',
+      message: ''
+    })
 
       // Auto-close toast after 5 seconds
       setTimeout(() => {
@@ -378,13 +297,13 @@ export default function Contact() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-block mb-6"
+              className="inline-block mb-4"
             >
               <span className="inline-block py-3 px-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#40E0D0] text-sm font-bold uppercase tracking-wider shadow-xl">
                 Let's Connect
               </span>
             </motion.div>
-            <h1 className="font-opensans text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight tracking-tight drop-shadow-2xl">
+            <h1 className="font-opensans text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight tracking-tight drop-shadow-2xl">
               Get in <span className="text-[#40E0D0]">Touch</span>
             </h1>
           </motion.div>
@@ -392,7 +311,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Content */}
-      <section className="py-20 relative -mt-32 z-20">
+      <section className="py-14 relative -mt-32 z-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid lg:grid-cols-3 gap-10">
 
@@ -408,16 +327,16 @@ export default function Contact() {
                 {
                   icon: <FaWhatsapp className="w-6 h-6" />,
                   title: "WhatsApp Us",
-                  content: "+91 81257 00615",
-                  link: "https://wa.me/918125700615",
+                  content: "+91 74160 57510",
+                  link: "https://wa.me/917416057510",
                   color: "text-green-500",
                   bg: "bg-green-50"
                 },
                 {
                   icon: <FaPhone className="w-6 h-6" />,
                   title: "Call Us",
-                  content: "+91 81257 00615",
-                  link: "tel:+918125700615",
+                  content: "+91 74160 57510",
+                  link: "tel:+917416057510",
                   color: "text-blue-500",
                   bg: "bg-blue-50"
                 },
@@ -465,16 +384,16 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="block w-full h-full relative group"
                 >
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.998630773956!2d72.57136211496783!3d23.022505584953604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1645511528654!5m2!1sen!2sin"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    title="BWPipes Location Map"
-                    className="rounded-xl grayscale hover:grayscale-0 transition-all duration-500"
-                  ></iframe>
+                <iframe
+                  src="https://www.google.com/maps?q=6-1-56+Bhagyalaxmi+Colony+Manikonda+Hyderabad+500089&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  title="BWPipes Location Map - Hyderabad"
+                  className="rounded-xl grayscale hover:grayscale-0 transition-all duration-500"
+                ></iframe>
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all rounded-xl flex items-center justify-center">
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 px-4 py-2 rounded-lg shadow-lg text-sm font-semibold text-[#40E0D0]">
                       Click to open in Google Maps
@@ -496,7 +415,7 @@ export default function Contact() {
                 {/* Decorative background */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#40E0D0]/5 to-transparent rounded-full blur-3xl -mr-32 -mt-32"></div>
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-[#7FFFD4]/5 to-transparent rounded-full blur-3xl -ml-32 -mb-32"></div>
-
+                
                 <div className="mb-10 relative z-10">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-1 h-10 bg-gradient-to-b from-[#40E0D0] to-[#7FFFD4] rounded-full"></div>
@@ -547,10 +466,10 @@ export default function Contact() {
                           <span style={{ display: "block", marginTop: "4px", fontSize: "11px", color: "#ef4444", fontWeight: "400" }}>{errors.name}</span>
                         )}
                       </div>
-                        <div className="group relative">
-                          <label className="block text-sm font-bold text-gray-700 mb-3 group-focus-within:text-[#40E0D0] transition-colors">
+                      <div className="group relative">
+                        <label className="block text-sm font-bold text-gray-700 mb-3 group-focus-within:text-[#40E0D0] transition-colors">
                             Enter Your Email <span className="text-red-500">*</span>
-                          </label>
+                        </label>
                         <div
                           key={`email-${shakeKey}`}
                           className={`relative ${errors.email ? 'animate-shake' : ''}`}
@@ -574,11 +493,11 @@ export default function Contact() {
                       </div>
                     </div>
 
-                    <div className="group relative">
-                      <label className="block text-sm font-bold text-gray-700 mb-3 group-focus-within:text-[#40E0D0] transition-colors">
+                      <div className="group relative">
+                        <label className="block text-sm font-bold text-gray-700 mb-3 group-focus-within:text-[#40E0D0] transition-colors">
                         Company Name
-                      </label>
-                      <div className="relative">
+                        </label>
+                        <div className="relative">
                         <input
                           type="text"
                           name="companyName"
@@ -724,13 +643,13 @@ export default function Contact() {
                           </>
                         ) : (
                           <>
-                            <span>Send Message</span>
-                            <FaPaperPlane className="group-hover:translate-x-1 transition-transform" />
+                        <span>Send Message</span>
+                        <FaPaperPlane className="group-hover:translate-x-1 transition-transform" />
                           </>
                         )}
                       </span>
                       {!isSubmitting && (
-                        <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                       )}
                     </motion.button>
                   </form>

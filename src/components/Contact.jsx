@@ -29,19 +29,19 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-14 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <h2 className="font-opensans text-[28px] lg:text-[38px] font-extrabold text-[#40E0D0] leading-[1.2] mb-4">
             Contact Us Today
           </h2>
-          <div className="w-24 h-1 bg-[#40E0D0] mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-[#40E0D0] mx-auto mb-4"></div>
           <p className="font-inter text-[25px] text-[#1a1a1a]  mx-auto">
             Looking for a Reliable PVC & HDPE Pipe Exporter? Contact us today to discuss your bulk order, project requirement, or long-term supply needs.
           </p>
@@ -55,11 +55,11 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="font-opensans text-[28px] font-bold text-[#40E0D0] mb-8">
+            <h3 className="font-opensans text-[28px] font-bold text-[#40E0D0] mb-4">
               Get In Touch
             </h3>
 
-            <div className="space-y-6 mb-8">
+            <div className="space-y-6 mb-4">
               {[
                 {
                   icon: (
@@ -68,8 +68,8 @@ export default function Contact() {
                     </svg>
                   ),
                   title: 'WhatsApp',
-                  content: '+91 81257 00615',
-                  link: 'https://wa.me/918125700615',
+                  content: '+91 74160 57510',
+                  link: 'https://wa.me/917416057510',
                 },
                 {
                   icon: (
@@ -78,8 +78,8 @@ export default function Contact() {
                     </svg>
                   ),
                   title: 'Phone',
-                  content: '+91 81257 00615',
-                  link: 'tel:+918125700615',
+                  content: '+91 74160 57510',
+                  link: 'tel:+917416057510',
                 },
                 {
                   icon: (
@@ -132,12 +132,12 @@ export default function Contact() {
           >
             <form onSubmit={handleSubmit} className="bg-[#F8F9FA] rounded-xl p-8 shadow-lg">
               {submitted && (
-                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
+                <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
                   Thank you! We'll contact you soon.
                 </div>
               )}
 
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <div className="grid md:grid-cols-2 gap-6 mb-4">
                 <div>
                   <label className="block font-opensans font-semibold text-[#40E0D0] mb-2 text-[16px]">
                     Name *
@@ -166,7 +166,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <div className="grid md:grid-cols-2 gap-6 mb-4">
                 <div>
                   <label className="block font-opensans font-semibold text-[#40E0D0] mb-2 text-[16px]">
                     Phone *
@@ -194,7 +194,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <div className="grid md:grid-cols-2 gap-6 mb-4">
                 <div>
                   <label className="block font-opensans font-semibold text-[#40E0D0] mb-2 text-[16px]">
                     Country *
@@ -221,13 +221,12 @@ export default function Contact() {
                     <option value="">Select Product</option>
                     <option value="pvc">PVC Pipes</option>
                     <option value="hdpe">HDPE Pipes</option>
-                    <option value="upvc">uPVC Pipes</option>
                     <option value="all">All Products</option>
                   </select>
                 </div>
               </div>
 
-              <div className="mb-6">
+              <div className="mb-4">
                 <label className="block font-opensans font-semibold text-[#40E0D0] mb-2 text-[16px]">
                   Message *
                 </label>

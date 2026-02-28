@@ -42,17 +42,17 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-20 bg-white">
+    <section id="testimonials" className="py-14 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <span className="section-label">Client Feedback</span>
-          <h2 className="font-opensans text-[32px] lg:text-[42px] font-extrabold text-[#333333] leading-[1.2] mt-4 mb-6">
+          <h2 className="font-opensans text-[32px] lg:text-[42px] font-extrabold text-[#333333] leading-[1.2] mt-4 mb-4">
             Customer Reviews
           </h2>
           <p className="font-inter text-[18px] text-[#696969]  mx-auto">
@@ -99,7 +99,7 @@ export default function Testimonials() {
                 </div>
 
                 {/* Testimonial Text */}
-                <p className="font-inter text-[15px] text-[#333333] leading-[1.8] mb-6 italic">
+                <p className="font-inter text-[15px] text-[#333333] leading-[1.8] mb-4 italic">
                   "{testimonial.text}"
                 </p>
 

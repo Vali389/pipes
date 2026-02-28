@@ -48,7 +48,7 @@ const googleDriveSlides = [
     fileId: '1RQ9WGPLngfpCQCR7Ty-2rnk4WjrWqIg-',
     badge: "Reliable Distribution",
     title: "Fast & Secure Global Logistics",
-    desc: "Delivering piping excellence to over 25+ countries with a focus on safety and on-time project completion. Our global network ensures reliable delivery wherever you are."
+    desc: "Delivering piping excellence with a focus on safety and on-time project completion. Our global network ensures reliable delivery wherever you are."
   },
   {
     fileId: '1FMmmUCcXgPksuGuyUMMgnQvqmuH-cIsP',
@@ -136,7 +136,7 @@ export default function Hero() {
                 className="max-w-3xl"
               >
                 {/* Badge line */}
-                <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center gap-4 mb-4">
                   <motion.div
                     className="h-[3px] w-12 bg-[#F57C00]"
                     initial={{ width: 0 }}
@@ -149,7 +149,7 @@ export default function Hero() {
                 </div>
 
                 {/* Main Headline */}
-                <h1 className="font-opensans text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-8 text-white drop-shadow-xl">
+                <h1 className="font-opensans text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-4 text-white drop-shadow-xl">
                   {slide.title.split(' ').map((word, i) => (
                     word === 'PVC' || word === '&' || word === 'HDPE' ? (
                       <span key={i} className="text-[#40E0D0]"> {word} </span>
@@ -160,12 +160,12 @@ export default function Hero() {
                 </h1>
 
                 {/* Subheading */}
-                <p className="font-inter text-lg sm:text-xl lg:text-2xl text-white mb-12 leading-relaxed max-w-2xl font-medium drop-shadow-lg" style={{ opacity: 1, color: '#ffffff' }}>
+                <p className="font-inter text-lg sm:text-xl lg:text-2xl text-white mb-6 leading-relaxed max-w-2xl font-medium drop-shadow-lg" style={{ opacity: 1, color: '#ffffff' }}>
                   {slide.desc}
                 </p>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-6 mb-16">
+                <div className="flex flex-col sm:flex-row gap-6 mb-8">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -173,9 +173,9 @@ export default function Hero() {
                     <Link
                       to="/contact"
                       className="px-10 py-4 bg-[#F57C00] hover:bg-[#E66D00] text-white text-lg font-bold font-opensans rounded-lg transition-colors shadow-lg shadow-[#F57C00]/30 flex items-center justify-center gap-2"
-                    >
-                      Get a Quote
-                      <FaChevronRight className="w-4 h-4" />
+                  >
+                    Get a Quote
+                    <FaChevronRight className="w-4 h-4" />
                     </Link>
                   </motion.div>
 
@@ -185,30 +185,13 @@ export default function Hero() {
                   >
                     <Link
                       to="/products"
-                      className="px-10 py-4 bg-transparent border-2 border-white text-white text-lg font-bold font-opensans rounded-lg transition-colors shadow-lg hover:border-[#40E0D0] hover:text-[#40E0D0] flex items-center justify-center gap-2"
-                    >
-                      View Products
+                    className="px-10 py-4 bg-transparent border-2 border-white text-white text-lg font-bold font-opensans rounded-lg transition-colors shadow-lg hover:border-[#40E0D0] hover:text-[#40E0D0] flex items-center justify-center gap-2"
+                  >
+                    View Products
                     </Link>
                   </motion.div>
                 </div>
 
-                {/* Animated Stats (Hidden on small screens for clarity) */}
-                <div className="hidden md:flex gap-12 border-t border-white/20 pt-8">
-                  {[
-                    { val: "25+", text: "Countries Served" },
-                    { val: "1000+", text: "Projects Done" },
-                    { val: "ISO", text: "Certified Quality" },
-                  ].map((stat, i) => (
-                    <div key={i}>
-                      <div className="text-3xl font-bold text-white font-opensans mb-1">
-                        {stat.val}
-                      </div>
-                      <div className="text-sm text-gray-300 uppercase tracking-wider">
-                        {stat.text}
-                      </div>
-                    </div>
-                  ))}
-                </div>
               </motion.div>
             </div>
           </SwiperSlide>

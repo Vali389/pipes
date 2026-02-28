@@ -57,8 +57,8 @@ export default function Header() {
 
           {/* Phone & Contact */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="https://wa.me/918125700615" target="_blank" rel="noopener noreferrer" className="text-[15px] font-semibold text-[#1a1a1a] font-opensans hover:text-[#40E0D0] transition-colors">
-              +91 81257 00615
+            <a href="https://wa.me/917416057510" target="_blank" rel="noopener noreferrer" className="text-[15px] font-semibold text-[#1a1a1a] font-opensans hover:text-[#40E0D0] transition-colors">
+              +91 74160 57510
             </a>
             <motion.a
               href="/contact"
@@ -111,8 +111,8 @@ export default function Header() {
                 </Link>
               ))}
               <div className="px-4 pt-4 border-t mt-4">
-                <a href="https://wa.me/918125700615" target="_blank" rel="noopener noreferrer" className="block text-[15px] font-semibold text-[#1a1a1a] font-opensans mb-3">
-                  +91 81257 00615
+                <a href="https://wa.me/917416057510" target="_blank" rel="noopener noreferrer" className="block text-[15px] font-semibold text-[#1a1a1a] font-opensans mb-3">
+                  +91 74160 57510
                 </a>
                 <Link
                   to="/contact"

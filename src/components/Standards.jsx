@@ -13,19 +13,19 @@ export default function Standards() {
   ]
 
   return (
-    <section id="standards" className="py-20 bg-[#F8F9FA]">
+    <section id="standards" className="py-14 bg-[#F8F9FA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
-          <h2 className="font-opensans text-[28px] lg:text-[38px] font-extrabold text-[#40E0D0] leading-[1.2] mb-6">
+          <h2 className="font-opensans text-[28px] lg:text-[38px] font-extrabold text-[#40E0D0] leading-[1.2] mb-4">
             Standards & Compliance
           </h2>
-          <p className="font-inter text-[25px] text-[#333333] leading-[1.9] mx-auto mb-12">
+          <p className="font-inter text-[25px] text-[#333333] leading-[1.9] mx-auto mb-8">
             Products can be supplied as per various international standards including ISO and customer-specific technical specifications. Compliance documents and test reports can be arranged upon request to ensure full transparency and quality assurance.
           </p>
         </motion.div>

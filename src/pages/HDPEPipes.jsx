@@ -58,7 +58,7 @@ export default function HDPEPipes() {
                         transition={{ duration: 0.8 }}
                         className="max-w-4xl"
                     >
-                        <h1 className="text-[48px] md:text-[64px] lg:text-[72px] font-extrabold text-white font-opensans leading-tight mb-8 drop-shadow-xl">
+                        <h1 className="text-[48px] md:text-[64px] lg:text-[72px] font-extrabold text-white font-opensans leading-tight mb-4 drop-shadow-xl">
                             HDPE Pipes
                         </h1>
                         <p className="text-[20px] md:text-[24px] text-white leading-relaxed max-w-2xl font-medium drop-shadow-lg mb-10" style={{ opacity: 1, color: '#ffffff' }}>
@@ -74,7 +74,7 @@ export default function HDPEPipes() {
             </div>
 
             {/* --- INTRO SECTION --- */}
-            <div className="py-24 bg-gradient-to-b from-white to-[#F8F9FA]">
+            <div className="py-16 bg-gradient-to-b from-white to-[#F8F9FA]">
                 <div className="container px-6 lg:px-12">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -83,7 +83,7 @@ export default function HDPEPipes() {
                         transition={{ duration: 0.8 }}
                         className="text-center"
                     >
-                        <h2 className="text-[36px] md:text-[44px] font-extrabold text-[#40E0D0] mb-8 font-opensans leading-tight">
+                        <h2 className="text-[36px] md:text-[44px] font-extrabold text-[#40E0D0] mb-4 font-opensans leading-tight">
                             HDPE Pipes
                         </h2>
                         <div className="w-40 h-2 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] mx-auto mb-10 rounded-full"></div>
@@ -95,14 +95,14 @@ export default function HDPEPipes() {
             </div>
 
             {/* --- SECTION 1: HDPE PIPE PRODUCT RANGE --- */}
-            <div className="py-24 bg-white">
+            <div className="py-16 bg-white">
                 <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
+                        className="text-center mb-10"
                     >
                         <SectionHeading>HDPE Pipe Product Range</SectionHeading>
                     </motion.div>
@@ -115,7 +115,7 @@ export default function HDPEPipes() {
                             transition={{ duration: 0.8 }}
                             className="bg-gradient-to-br from-white to-[#F8F9FA] rounded-2xl p-8 shadow-xl border-2 border-[#40E0D0]/20 hover:border-[#40E0D0] transition-all"
                         >
-                            <h3 className="text-[28px] font-extrabold text-[#40E0D0] mb-6 font-opensans">HDPE Pressure Pipes</h3>
+                            <h3 className="text-[28px] font-extrabold text-[#40E0D0] mb-4 font-opensans">HDPE Pressure Pipes</h3>
                             <div className="bg-gradient-to-br from-[#40E0D0]/10 to-[#7FFFD4]/10 p-6 rounded-xl border-2 border-[#40E0D0]/30">
                                 <ul className="space-y-3 text-[16px] text-[#333333]">
                                     <li className="flex justify-between border-b border-[#40E0D0]/20 pb-2">
@@ -142,8 +142,8 @@ export default function HDPEPipes() {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="bg-gradient-to-br from-white to-[#F8F9FA] rounded-2xl p-8 shadow-xl border-2 border-[#7FFFD4]/20 hover:border-[#7FFFD4] transition-all"
                         >
-                            <h3 className="text-[28px] font-extrabold text-[#7FFFD4] mb-6 font-opensans">HDPE Sprinkler Pipes</h3>
-                            <div className="bg-gradient-to-br from-[#7FFFD4]/10 to-[#40E0D0]/10 p-6 rounded-xl border-2 border-[#7FFFD4]/30 mb-6">
+                            <h3 className="text-[28px] font-extrabold text-[#7FFFD4] mb-4 font-opensans">HDPE Sprinkler Pipes</h3>
+                            <div className="bg-gradient-to-br from-[#7FFFD4]/10 to-[#40E0D0]/10 p-6 rounded-xl border-2 border-[#7FFFD4]/30 mb-4">
                                 <ul className="space-y-3 text-[16px] text-[#333333]">
                                     <li className="flex justify-between border-b border-[#7FFFD4]/20 pb-2">
                                         <span className="font-inter font-medium">Diameter range</span>
@@ -171,14 +171,14 @@ export default function HDPEPipes() {
             </div>
 
             {/* --- SECTION 2: KEY BENEFITS --- */}
-            <div className="py-24 bg-gradient-to-b from-[#F8F9FA] to-white">
+            <div className="py-16 bg-gradient-to-b from-[#F8F9FA] to-white">
                 <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
+                        className="text-center mb-10"
                     >
                         <SectionHeading>Key Benefits of HDPE Pipes</SectionHeading>
                     </motion.div>
@@ -190,7 +190,7 @@ export default function HDPEPipes() {
                             transition={{ duration: 0.5 }}
                             className="bg-white rounded-xl p-8 shadow-lg border-2 border-[#40E0D0]/20"
                         >
-                            <h4 className="font-bold text-[#40E0D0] mb-6 text-[20px] uppercase tracking-wide font-opensans">Mechanical & Hydraulic Performance</h4>
+                            <h4 className="font-bold text-[#40E0D0] mb-4 text-[20px] uppercase tracking-wide font-opensans">Mechanical & Hydraulic Performance</h4>
                             <CheckList items={[
                                 "High abrasion resistance and tensile strength",
                                 "Smooth inner surface for high flow efficiency",
@@ -204,7 +204,7 @@ export default function HDPEPipes() {
                             transition={{ duration: 0.5, delay: 0.1 }}
                             className="bg-white rounded-xl p-8 shadow-lg border-2 border-[#40E0D0]/20"
                         >
-                            <h4 className="font-bold text-[#40E0D0] mb-6 text-[20px] uppercase tracking-wide font-opensans">Installation & Handling Advantages</h4>
+                            <h4 className="font-bold text-[#40E0D0] mb-4 text-[20px] uppercase tracking-wide font-opensans">Installation & Handling Advantages</h4>
                             <CheckList items={[
                                 "Lightweight and easy to transport",
                                 "Heat fusion, butt fusion, and socket fusion joints",
@@ -218,7 +218,7 @@ export default function HDPEPipes() {
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="bg-white rounded-xl p-8 shadow-lg border-2 border-[#40E0D0]/20"
                         >
-                            <h4 className="font-bold text-[#40E0D0] mb-6 text-[20px] uppercase tracking-wide font-opensans">Durability & Safety</h4>
+                            <h4 className="font-bold text-[#40E0D0] mb-4 text-[20px] uppercase tracking-wide font-opensans">Durability & Safety</h4>
                             <CheckList items={[
                                 "UV resistant – suitable for outdoor storage",
                                 "Corrosion-free and chemically inert",
@@ -231,14 +231,14 @@ export default function HDPEPipes() {
             </div>
 
             {/* --- SECTION 3: APPLICATIONS --- */}
-            <div className="py-24 bg-white">
+            <div className="py-16 bg-white">
                 <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
+                        className="text-center mb-10"
                     >
                         <SectionHeading>Applications of HDPE Pipes</SectionHeading>
                     </motion.div>
@@ -272,14 +272,14 @@ export default function HDPEPipes() {
             </div>
 
             {/* --- SECTION 4: WHY HDPE --- */}
-            <div className="py-24 bg-gradient-to-b from-[#F8F9FA] to-white">
+            <div className="py-16 bg-gradient-to-b from-[#F8F9FA] to-white">
                 <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
+                        className="text-center mb-10"
                     >
                         <SectionHeading>Why HDPE Piping Systems Are the Preferred Choice</SectionHeading>
                         <p className="font-inter text-[18px] md:text-[20px] text-[#333333] mx-auto leading-relaxed mt-8">
@@ -290,17 +290,17 @@ export default function HDPEPipes() {
             </div>
 
             {/* --- SECTION 5: PROVEN INSTALLATION --- */}
-            <div className="py-24 bg-white">
+            <div className="py-16 bg-white">
                 <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
+                        className="text-center mb-10"
                     >
                         <SectionHeading>Proven Installation & Application Capabilities</SectionHeading>
-                        <p className="font-inter text-[18px] md:text-[20px] text-[#333333] mx-auto leading-relaxed mt-8 mb-12">
+                        <p className="font-inter text-[18px] md:text-[20px] text-[#333333] mx-auto leading-relaxed mt-8 mb-4">
                             HDPE pipes are tested and proven for diverse installation environments, including:
                         </p>
                     </motion.div>
@@ -336,14 +336,14 @@ export default function HDPEPipes() {
             </div>
 
             {/* --- SECTION 6: PERFORMANCE BENEFITS --- */}
-            <div className="py-24 bg-gradient-to-b from-[#F8F9FA] to-white">
+            <div className="py-16 bg-gradient-to-b from-[#F8F9FA] to-white">
                 <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
+                        className="text-center mb-10"
                     >
                         <SectionHeading>Performance Benefits of HDPE Pipes</SectionHeading>
                     </motion.div>
@@ -393,7 +393,7 @@ export default function HDPEPipes() {
             </div>
 
             {/* --- SECTION 7: SUSTAINABLE --- */}
-            <div className="py-24 bg-white">
+            <div className="py-16 bg-white">
                 <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -403,7 +403,7 @@ export default function HDPEPipes() {
                         className="text-center"
                     >
                         <SectionHeading>Sustainable & Environment-Friendly Infrastructure Solution</SectionHeading>
-                        <p className="font-inter text-[18px] md:text-[20px] text-[#333333] mx-auto leading-relaxed mt-8 max-w-4xl">
+                        <p className="font-inter text-[18px] md:text-[20px] text-[#333333]  leading-relaxed mt-4">
                             With zero infiltration and leakage, HDPE pipelines help conserve potable water and prevent groundwater contamination. Their long service life and recyclability make HDPE piping a sustainable choice for modern infrastructure development.
                         </p>
                     </motion.div>
@@ -411,7 +411,7 @@ export default function HDPEPipes() {
             </div>
 
             {/* --- CTA SECTION --- */}
-            <div className="py-20 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] relative overflow-hidden">
+            <div className="py-14 bg-gradient-to-r from-[#40E0D0] via-[#7FFFD4] to-[#40E0D0] relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/10"></div>
                 <div className="container mx-auto px-6 lg:px-12 text-center text-white relative z-10">
                     <motion.div
@@ -420,13 +420,13 @@ export default function HDPEPipes() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h2 className="text-[36px] md:text-[44px] font-extrabold mb-6 font-opensans drop-shadow-lg">
+                        <h2 className="text-[36px] md:text-[44px] font-extrabold  font-opensans drop-shadow-lg">
                             Ready to Upgrade Your Infrastructure?
                         </h2>
-                        <p className="font-inter text-[20px] md:text-[22px] text-white mx-auto leading-relaxed mb-10">
+                        <p className="font-inter text-[20px] md:text-[22px] text-white  leading-relaxed mb-20">
                             Contact us for detailed specifications, bulk pricing, and project consulting. We offer comprehensive piping solutions for agriculture, plumbing, drainage, electrical, and industrial infrastructure projects.
                         </p>
-                        <Link to="/contact" className="inline-block px-12 py-5 bg-white text-[#40E0D0] font-bold rounded-xl shadow-2xl hover:bg-gray-50 transition-all uppercase tracking-wide text-[18px] transform hover:-translate-y-1 hover:shadow-3xl">
+                        <Link to="/contact" className="inline-block px-12 py-5 bg-white text-[#40E0D0] font-bold rounded-xl shadow-2xl hover:bg-gray-50 transition-all uppercase tracking-wide text-[18px] transform hover:-translate-y-1 hover:shadow-3xl mt-5">
                             Request a Quote
                         </Link>
                     </motion.div>
